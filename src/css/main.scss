@@ -1,0 +1,117 @@
+/* Define colors */
+$navy: rgb(0,100,200);
+$blush: rgb(255,200,200);
+$dark-blush: darken($blush, 5%);
+$dark-navy: darken($navy, 5%);
+
+/* Navbar */
+$nav-height: 60px;
+
+$hero-height: 700px;
+
+/* Import fonts */
+@import url(https://fonts.googleapis.com/css?family=Satisfy);
+
+.body {
+	display: flex;
+	flex-direction: column;
+	color: white;
+}
+
+.section {
+	height: 500px;
+
+	@at-root &--navy {
+		background-color: $navy;
+	}
+
+	@at-root &--blush {
+		background-color: $blush;
+	}
+
+}
+
+.nav {
+	height: $nav-height;
+	order: -1;
+	color: $dark-blush;
+
+	@at-root &__ul {
+		list-style: none;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		line-height: $nav-height;
+	}
+
+	@at-root &__li {
+		padding: 0 40px;
+	}
+
+	@at-root &__a {
+		color: $dark-blush;
+	}
+
+	@at-root &__a:hover {
+		color: $navy;
+		text-decoration: none;
+	}
+}
+
+.hero {
+	padding: 0;
+	background-image: url('../img/hero.jpg');
+	background-size: cover;
+	overflow-y: hidden;
+	height: $hero-height;
+	/*position: relative;*/
+
+	@at-root &__h1 {
+		margin: 0;
+		text-shadow: 0 3px 2px rgba(0,0,0,0.5);
+		font-family: 'Satisfy', sans-serif;
+		font-size: 6em;
+		z-index: 3;
+		transform: rotate(-10deg);
+	}
+
+/*	@at-root &:before {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 1;
+		background: rgba($blush, 0.9);
+	}*/
+}
+
+.overlay {
+  display: block;
+  position: absolute;
+  top: 60;
+  left: 0;
+  right: 0;
+  height: $hero-height;
+  z-index: 2;
+  background: rgba($blush, 0.2);
+}
+
+.title {
+	height: $hero-height;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.bridal-party {
+
+}
+
+.event-info {
+
+}
