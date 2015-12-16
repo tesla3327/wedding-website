@@ -27,8 +27,29 @@ $hero-height: 800px;
     font-weight: 300;
 }
 
+.h2 {
+	font-family: 'Oswald', sans-serif;
+	font-size: 1.8em;
+
+	@at-root &--navy {
+		color: $dark-navy;
+	}
+
+	@at-root &--blush {
+		color: $dark-blush;
+	}
+}
+
 .section {
-	height: 500px;
+	color: $body-text;
+
+	@at-root &__h1 {
+		font-family: 'Satisfy', sans-serif;
+		font-size: 4em;
+		color: $dark-blush;
+		margin: 0;
+		padding: 1em 0;
+	}
 
 	@at-root &--navy {
 		background-color: $soft-navy;
@@ -74,6 +95,7 @@ $hero-height: 800px;
 	background-size: cover;
 	overflow-y: hidden;
 	height: $hero-height;
+	color: white;
 	/*position: relative;*/
 
 	@at-root &__h1 {
@@ -143,24 +165,7 @@ $hero-height: 800px;
 .bride-and-groom {
 	background-image: url('../img/bride-and-groom.jpg');
 	background-size: cover;
-	/*height: 800px;*/
-	height: auto;
-	color: $body-text;
 	padding: 0;
-
-	@at-root &__h1 {
-		font-family: 'Satisfy', sans-serif;
-		font-size: 3em;
-		color: $dark-blush;
-		margin: 0;
-		padding: 1em 0;
-	}
-
-	@at-root &__h2 {
-		font-family: 'Oswald', sans-serif;
-		font-size: 1.8em;
-		color: $dark-navy;
-	}
 
 	@at-root &__overlay {
 		background-color: white;
@@ -173,16 +178,32 @@ $hero-height: 800px;
 	}
 
 	@at-root &__info {
-		display: flex;
-		flex-direction: row;
-		justify-content: center;
-		padding: 3em 0;
+
 	}
 }
 
-.column {
-	margin: 0 50px;
-	width: 300px;
+.column-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding: 3em 0;
+
+	@at-root &__column {
+		margin: 0 50px;
+		width: 600px;
+
+		@at-root &--left {
+			margin-right: 0;
+		}
+
+		@at-root &--right {
+			margin-left: 0;
+		}
+
+		@at-root &--narrow {
+			width: 300px;
+		}
+ 	}
 }
 
 .viewport {
@@ -192,13 +213,58 @@ $hero-height: 800px;
 	height: $size;
 	border: 6px solid $soft-navy;
 	border-radius: $size / 2;
-	margin: auto;
+	/*margin: auto;*/
+	margin: 15px;
+
+	@at-root &--small {
+		$size: 150px;
+		width: $size;
+		height: $size;
+		border: 4px solid $soft-navy;
+		border-radius: $size / 2;
+	}
 }
 
 .bridal-party {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 50px 0;
+}
 
+.member-info {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+
+	@at-root &--right {
+		flex-direction: row-reverse;
+	}
+
+	@at-root &__blurb {
+		text-align: right;
+
+		@at-root &--right {
+			text-align: left;
+		}
+	}
 }
 
 .event-info {
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -14,8 +14,22 @@
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300; }
 
+.h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.8em; }
+  .h2--navy {
+    color: #003D77; }
+  .h2--blush {
+    color: #ff9595; }
+
 .section {
-  height: 500px; }
+  color: #646262; }
+  .section__h1 {
+    font-family: 'Satisfy', sans-serif;
+    font-size: 4em;
+    color: #ff9595;
+    margin: 0;
+    padding: 1em 0; }
   .section--navy {
     background-color: #4F78AB; }
   .section--blush {
@@ -54,6 +68,7 @@
   background-size: cover;
   overflow-y: hidden;
   height: 800px;
+  color: white;
   /*position: relative;*/
   /*	@at-root &:before {
 		content: "";
@@ -116,20 +131,7 @@
 .bride-and-groom {
   background-image: url("../img/bride-and-groom.jpg");
   background-size: cover;
-  /*height: 800px;*/
-  height: auto;
-  color: #646262;
   padding: 0; }
-  .bride-and-groom__h1 {
-    font-family: 'Satisfy', sans-serif;
-    font-size: 3em;
-    color: #ff9595;
-    margin: 0;
-    padding: 1em 0; }
-  .bride-and-groom__h2 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 1.8em;
-    color: #003D77; }
   .bride-and-groom__overlay {
     background-color: white;
     width: 100%;
@@ -146,25 +148,74 @@
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center; }
-  .bride-and-groom__info {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-direction: row;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -webkit-justify-content: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    padding: 3em 0; }
 
-.column {
-  margin: 0 50px;
-  width: 300px; }
+.column-container {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 3em 0; }
+  .column-container__column {
+    margin: 0 50px;
+    width: 600px; }
+    .column-container__column--left {
+      margin-right: 0; }
+    .column-container__column--right {
+      margin-left: 0; }
+    .column-container__column--narrow {
+      width: 300px; }
 
 .viewport {
   width: 200px;
   height: 200px;
   border: 6px solid #4F78AB;
   border-radius: 100px;
-  margin: auto; }
+  /*margin: auto;*/
+  margin: 15px; }
+  .viewport--small {
+    width: 150px;
+    height: 150px;
+    border: 4px solid #4F78AB;
+    border-radius: 75px; }
+
+.bridal-party {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 50px 0; }
+
+.member-info {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .member-info--right {
+    -webkit-flex-direction: row-reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse; }
+  .member-info__blurb {
+    text-align: right; }
+    .member-info__blurb--right {
+      text-align: left; }
