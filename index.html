@@ -226,7 +226,7 @@
                 <br>
                 Probably in August I guess?ss
               </p>
-              <button class="btn btn-default btn-lg button">RSVP</button>
+              <button class="button">RSVP</button>
             </div>
           </div>
         </div>
@@ -277,8 +277,27 @@
     <div class="rsvp-form hide">
       <div class="darkness">
         <div class="rsvp-form__window">
+
           <h2 class="h2 h2--blush">Woo! RSVP Time!</h2>
-          <a class="rsvp-form__window__close" href="#">Close</a>
+
+          <div class="rsvp-form__window__form">
+            <form>
+              <div>
+                <label class="label" for="name">Name</label>
+                <input class="input" id="name" placeholder="Name">
+              </div>
+              <div>
+                <label class="label" for="exampleInputEmail1">Email Address</label>
+                <input class="input" id="exampleInputEmail1" placeholder="Email">
+              </div>
+            </form>
+          </div>
+
+          <div class="rsvp-form__window__buttons">
+            <button class="button button--dark">RSVP</button>
+            <a class="rsvp-form__window__close" href="#">Close</a>
+          </div>
+
         </div>
       </div>
     </div>

@@ -10,7 +10,14 @@
   -webkit-flex-direction: column;
       -ms-flex-direction: column;
           flex-direction: column;
-  color: white;
+  color: white; }
+  .body a,
+  .body a:hover {
+    text-decoration: none; }
+
+.body,
+.input,
+.label {
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
   font-size: 16px; }
@@ -65,8 +72,7 @@
   .nav__a {
     color: #ff9595; }
   .nav__a:hover {
-    color: #4F78AB;
-    text-decoration: none; }
+    color: #4F78AB; }
 
 .hero {
   padding: 0;
@@ -287,6 +293,10 @@
     border: 1px solid white;
     color: white;
     box-shadow: none; }
+    .button:focus--dark, .button:hover--dark, .button:active--dark {
+      border-color: #ff9595; }
+  .button--dark {
+    border-color: #ff9595; }
 
 .rsvp-form {
   position: fixed;
@@ -296,6 +306,8 @@
   z-index: 4; }
   .rsvp-form__window {
     background-color: white;
+    color: #646262;
+    padding: 20px;
     width: 25em;
     height: 35em;
     border-radius: 20px;
@@ -305,10 +317,29 @@
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
     box-shadow: 0 7px 15px rgba(0, 0, 0, 0.3); }
+    .rsvp-form__window .h2 {
+      margin-top: 10rpx; }
+    .rsvp-form__window__close {
+      padding-top: 15px; }
+    .rsvp-form__window__buttons {
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center; }
+    .rsvp-form__window__form {
+      width: 300px; }
 
 .registry {
   display: -webkit-flex;
@@ -350,6 +381,35 @@
       .registry__logos__logo .the-bay {
         width: 15em;
         height: auto; }
+
+form,
+.form-group {
+  width: 100%; }
+
+form > div {
+  padding: 10px 0; }
+
+.input {
+  display: block;
+  height: 40px;
+  border-radius: 20px;
+  border: 1px solid #93adcd;
+  width: 100%;
+  padding: 20px;
+  line-height: 40px;
+  color: #646262;
+  transition: box-shadow 0.2s ease;
+  text-align: center; }
+  .input:focus {
+    outline: none;
+    box-shadow: 0 0 3px #4F78AB; }
+
+.label {
+  color: #4F78AB;
+  font-size: 1.2em;
+  display: inline-block;
+  font-weight: 500;
+  font-family: 'Oswald', sans-serif; }
 
 .darkness {
   background-color: rgba(0, 0, 0, 0.3);
