@@ -24,7 +24,7 @@
     </div>
 
     <!-- Hero Section -->
-    <section>
+    <section id="home">
       <div class="container-fluid section section--blush hero">
 
           <div class="title">
@@ -40,6 +40,7 @@
 
     <!-- Bride and Groom -->
     <section>
+      <div class="anchor" id="bride-groom"></div>
       <div class="container-fluid section bride-and-groom">
         <div class="bride-and-groom__overlay">
 
@@ -67,6 +68,7 @@
 
     <!-- Bridal Party -->
     <section>
+      <div class="anchor" id="bridal-party"></div>
       <div class="container-fluid section bridal-party">
 
         <h1 class="section__h1">Bridal Party</h1>
@@ -151,6 +153,7 @@
 
     <!-- Event Information -->
     <section>
+      <div class="anchor" id="ontario"></div>
       <div class="container-fluid section section--navy event-info">
 
         <!-- Header -->
@@ -189,6 +192,7 @@
 
         <!-- Map -->
         <div class="event-info__map">
+          <iframe width="450" height="600" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=43.369931%2C-80.979383&key=AIzaSyACrv3zfsVbwE30YAjle5zNP5QZXi9z7D0"></iframe>
         </div>
 
       </div>
@@ -197,6 +201,7 @@
 
     <!-- Event Information -->
     <section>
+      <div class="anchor" id="manitoba"></div>
       <div class="container-fluid section section--navy event-info">
 
         <!-- Header -->
@@ -233,6 +238,12 @@
 
         <!-- Map -->
         <div class="event-info__map">
+          <iframe width="450" height="600" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=43.369931%2C-80.979383&key=AIzaSyACrv3zfsVbwE30YAjle5zNP5QZXi9z7D0"></iframe>
+
+<!--           <img src="https://maps.googleapis.com/maps/api/staticmap?&zoom=17&size=450x600&maptype=roadmap
+          &markers=color:blue|label:C|43.37181,-80.980169
+          &markers=color:green|label:R|43.369931,-80.979383
+          &key=AIzaSyACrv3zfsVbwE30YAjle5zNP5QZXi9z7D0"> -->
         </div>
 
       </div>
@@ -241,6 +252,7 @@
 
     <!-- Registry -->
     <section>
+      <div class="anchor" id="registry"></div>
       <div class="container-fluid section section--navy registry">
 
         <h1 class="section__h1 section__h1--white">We are registered at</h1>
@@ -263,12 +275,12 @@
     <!-- Navigation -->
     <nav class="section nav">
       <ul class="nav__ul">
-        <li class="nav__li"><a href="#" class="nav__a">Home</a></li>
-        <li class="nav__li"><a href="#" class="nav__a">Bride & Groom</a></li>
-        <li class="nav__li"><a href="#" class="nav__a">Bridal Party</a></li>
-        <li class="nav__li"><a href="#" class="nav__a">Ontario</a></li>
-        <li class="nav__li"><a href="#" class="nav__a">Manitoba</a></li>
-        <li class="nav__li"><a href="#" class="nav__a">Registry</a></li>
+        <li class="nav__li"><a data-scroll scroll="#home" class="nav__a active">Home</a></li>
+        <li class="nav__li"><a data-scroll scroll="#bride-groom" class="nav__a">Bride & Groom</a></li>
+        <li class="nav__li"><a data-scroll scroll="#bridal-party" class="nav__a">Bridal Party</a></li>
+        <li class="nav__li"><a data-scroll scroll="#ontario" class="nav__a">Ontario</a></li>
+        <li class="nav__li"><a data-scroll scroll="#manitoba" class="nav__a">Manitoba</a></li>
+        <li class="nav__li"><a data-scroll scroll="#registry" class="nav__a">Registry</a></li>
       </ul>
     </nav>
     <!-- End Navigation -->
@@ -306,6 +318,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/smooth-scroll.min.js"></script>
     <script type="text/javascript" src="assets/js/main.js"></script>
   </body>
 </html>

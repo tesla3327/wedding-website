@@ -21,6 +21,12 @@ $hero-height: 800px;
     @at-root & a,
     		 & a:hover {
     	text-decoration: none;
+    	cursor: pointer;
+   	}
+
+   	@at-root & a.active,
+   			 & a.active:hover {
+   		color: $dark-navy;
    	}
 }
 
@@ -82,9 +88,13 @@ $hero-height: 800px;
 }
 
 .nav {
+	position: fixed;
 	height: $nav-height;
+	width: 100%;
 	order: -1;
+	background-color: white;
 	color: $dark-blush;
+	z-index: 5;
 
 	@at-root &__ul {
 		list-style: none;
@@ -99,12 +109,18 @@ $hero-height: 800px;
 	}
 
 	@at-root &__a {
+		transition: color 0.2s ease;
 		color: $dark-blush;
 	}
 
 	@at-root &__a:hover {
 		color: $soft-navy;
 	}
+}
+
+.anchor {
+	position: relative;
+	top: -$nav-height;
 }
 
 .hero {
@@ -114,6 +130,7 @@ $hero-height: 800px;
 	overflow-y: hidden;
 	height: $hero-height;
 	color: white;
+	margin-top: $nav-height;
 	/*position: relative;*/
 
 	@at-root &__h1 {
@@ -138,7 +155,7 @@ $hero-height: 800px;
 .overlay {
   display: block;
   position: absolute;
-  top: 60;
+  top: $nav-height;
   left: 0;
   right: 0;
   height: 800px;
@@ -205,6 +222,7 @@ $hero-height: 800px;
 	flex-direction: row;
 	justify-content: center;
 	padding: 3em 0;
+	padding-top: 0;
 
 	@at-root &__column {
 		margin: 0 50px;
@@ -309,9 +327,13 @@ $hero-height: 800px;
 	@at-root &__map {
 		width: 450px;
 		height: 600px;
-		background-image: url('../img/map.jpg');
-		background-size: cover;
-		border-radius: 20px;
+		// background-image: url('../img/map.jpg');
+		// background-size: cover;
+		
+		@at-root & img,
+				 & iframe {
+			border-radius: 20px;
+		}
 	}
 }
 
