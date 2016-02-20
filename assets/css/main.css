@@ -3,6 +3,9 @@
 /* Import fonts */
 @import url(https://fonts.googleapis.com/css?family=Satisfy);
 @import url(https://fonts.googleapis.com/css?family=Oswald);
+.center-text {
+  text-align: center; }
+
 .body {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -35,6 +38,12 @@
     color: #ff9595; }
   .h2--white {
     color: white; }
+
+.h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5em; }
+  .h3--soft-navy {
+    color: #4F78AB; }
 
 .section {
   color: #646262; }
@@ -85,7 +94,7 @@
 
 .anchor {
   position: relative;
-  top: -60px; }
+  top: -50px; }
 
 .hero {
   padding: 0;
@@ -155,13 +164,14 @@
     left: -0.3em; }
 
 .bride-and-groom {
-  background-image: url("../img/bride-and-groom.jpg");
+  background-image: url("../img/grace-and-michael.jpg");
   background-size: cover;
   padding: 0; }
   .bride-and-groom__overlay {
     background-color: white;
     width: 100%;
     height: 100%;
+    padding-bottom: 50px;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
@@ -195,14 +205,31 @@
     .column-container__column--right {
       margin-left: 0; }
     .column-container__column--narrow {
+      text-align: center;
       width: 300px; }
+    .column-container__column--story {
+      width: 400px;
+      margin: 0 15px;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
+    .column-container__column--picture {
+      width: 150px; }
 
 .viewport {
   width: 200px;
   height: 200px;
   border: 6px solid #7092bd;
   border-radius: 100px;
-  margin: 15px; }
+  margin: 15px;
+  background-size: contain;
+  background-position: center; }
   .viewport--small {
     width: 150px;
     height: 150px;
@@ -212,6 +239,12 @@
     border-color: #ffc8c8; }
   .viewport--center {
     margin: auto; }
+
+#viewport--grace {
+  background-image: url("../img/grace-profile.jpg"); }
+
+#viewport--michael {
+  background-image: url("../img/michael-profile.jpg"); }
 
 .bridal-party {
   display: -webkit-flex;
@@ -227,6 +260,22 @@
       -ms-flex-align: center;
           align-items: center;
   padding-bottom: 50px; }
+  .bridal-party #marcie .viewport {
+    background-image: url("../img/marcie.jpg"); }
+  .bridal-party #tina .viewport {
+    background-image: url("../img/tina.jpg"); }
+  .bridal-party #anna .viewport {
+    background-image: url("../img/anna.jpg"); }
+  .bridal-party #kim .viewport {
+    background-image: url("../img/kim.jpg"); }
+  .bridal-party #carlin .viewport {
+    background-image: url("../img/carlin.jpg"); }
+  .bridal-party #iain .viewport {
+    background-image: url("../img/iain.jpg"); }
+  .bridal-party #travis .viewport {
+    background-image: url("../img/travis.jpg"); }
+  .bridal-party #julian .viewport {
+    background-image: url("../img/julian.jpg"); }
 
 .member-info {
   display: -webkit-flex;
