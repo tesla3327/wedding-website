@@ -222,6 +222,9 @@
     .column-container__column--picture {
       width: 150px; }
 
+.proposal p {
+  margin-top: 20px; }
+
 .viewport {
   width: 200px;
   height: 200px;
