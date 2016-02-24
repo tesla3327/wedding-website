@@ -438,16 +438,20 @@
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-bottom: 8em; }
+  padding-bottom: 14em; }
   .registry .section__h1 {
     padding-bottom: 0; }
   .registry__logos {
+    padding-top: 100px;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     -webkit-flex-direction: row;
         -ms-flex-direction: row;
             flex-direction: row;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-justify-content: space-around;
         -ms-flex-pack: distribute;
             justify-content: space-around;
@@ -468,6 +472,25 @@
       .registry__logos__logo .the-bay {
         width: 15em;
         height: auto; }
+
+.footer {
+  height: 100px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #3f6088;
+  color: white;
+  font-family: Satisfy;
+  font-size: 2em; }
 
 form,
 .form-group {

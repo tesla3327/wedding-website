@@ -513,15 +513,17 @@ $hero-height: 800px;
 	display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 8em;
+    padding-bottom: 14em;
 
     @at-root & .section__h1 {
     	padding-bottom: 0;
     }
 
 	@at-root &__logos {
+		padding-top: 100px;
 	    display: flex;
 	    flex-direction: row;
+	    align-items: center;
 	    justify-content: space-around;
 	    width: 75%;
 
@@ -544,6 +546,18 @@ $hero-height: 800px;
 			}
 		}
 	}
+}
+
+.footer {
+	height: 100px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background-color: darken($soft-navy, 10%);
+	color: white;
+	font-family: Satisfy;
+	font-size: 2em;
 }
 
 form,
