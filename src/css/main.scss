@@ -47,6 +47,15 @@ $hero-height: 800px;
     font-size: 16px;
 }
 
+.no-top-margin {
+	margin-top: 0;
+}
+
+.subheading {
+	color: white;
+	font-size: 1.2em;
+}
+
 .h2 {
 	font-family: 'Oswald', sans-serif;
 	font-size: 1.8em;
@@ -70,6 +79,10 @@ $hero-height: 800px;
 
 	@at-root &--soft-navy {
 		color: $soft-navy;
+	}
+
+	@at-root &--white {
+		color: white;
 	}
 }
 
@@ -97,7 +110,6 @@ $hero-height: 800px;
 	@at-root &--blush {
 		background-color: $blush;
 	}
-
 }
 
 .nav {
@@ -372,10 +384,24 @@ $hero-height: 800px;
 
 .event-info {
 	display: flex;
-	flex-direction: row;
-	justify-content: center;
+	flex-direction: column;
+	// justify-content: center;
 	flex-wrap: wrap;
-	padding-bottom: 8em;
+	padding-bottom: 6em;
+
+	h1 {
+		padding-bottom: 0;
+	}
+
+	@at-root &__content {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	@at-root &__header {
+		padding-bottom: 3em;
+	}
 
 	@at-root &__info {
 		width: 450px;
