@@ -30,6 +30,20 @@ function setActive() {
   });
 }
 
+function tiltLeft( elem, time ) {
+  elem.classList.remove('tilt-right');
+  elem.classList.add('tilt-left');
+
+  window.setTimeout( tiltRight.bind(this, elem, time), time );
+}
+
+function tiltRight( elem, time ) {
+  elem.classList.remove('tilt-left');
+  elem.classList.add('tilt-right');
+
+  window.setTimeout( tiltLeft.bind(this, elem, time), time );
+}
+
 $(function() {
 
   // smoothScroll.init({
@@ -78,6 +92,9 @@ $(function() {
   });
 
   highlightOnScroll();
+
+  // Tilting animation
+  // tiltLeft( document.querySelector('.title'), 2000 );
 
 });
 

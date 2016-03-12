@@ -195,6 +195,10 @@ $hero-height: 800px;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	// animation: title-float 0.1s linear infinite;
+	// position: absolute;
+	// top: 0;
+	// left: 0;
 
 	@at-root &__date {
 		padding-top: 2em;
@@ -220,6 +224,12 @@ $hero-height: 800px;
 		font-size: 5em;
 		left: -0.3em;
 	}
+}
+
+@keyframes title-float {
+	0% { top: 0; left: 0 }
+	30% { top: 0; left: 6px }
+	64% { top: 0; left: -4px }
 }
 
 .bride-and-groom {
@@ -293,8 +303,9 @@ $hero-height: 800px;
 	border: 6px solid lighten($soft-navy, 10%);
 	border-radius: $size / 2;
 	margin: 15px;
-	background-size: contain;
+	background-size: 100%;
 	background-position: center;
+	transition: transform 0.3s ease;
 
 	@at-root &--small {
 		$size: 150px;
@@ -310,6 +321,10 @@ $hero-height: 800px;
 
 	@at-root &--center {
 		margin: auto;
+	}
+
+	@at-root &:hover {
+		transform: rotate(5deg);
 	}
 }
 
@@ -604,8 +619,6 @@ form > div {
     justify-content: center;
     align-items: center;
 }
-
-
 
 
 

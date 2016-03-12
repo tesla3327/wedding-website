@@ -172,6 +172,28 @@
     font-size: 5em;
     left: -0.3em; }
 
+@-webkit-keyframes title-float {
+  0% {
+    top: 0;
+    left: 0; }
+  30% {
+    top: 0;
+    left: 6px; }
+  64% {
+    top: 0;
+    left: -4px; } }
+
+@keyframes title-float {
+  0% {
+    top: 0;
+    left: 0; }
+  30% {
+    top: 0;
+    left: 6px; }
+  64% {
+    top: 0;
+    left: -4px; } }
+
 .bride-and-groom {
   background-image: url("../img/grace-and-michael.jpg");
   background-size: cover;
@@ -240,8 +262,11 @@
   border: 6px solid #7092bd;
   border-radius: 100px;
   margin: 15px;
-  background-size: contain;
-  background-position: center; }
+  background-size: 100%;
+  background-position: center;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease; }
   .viewport--small {
     width: 150px;
     height: 150px;
@@ -251,6 +276,9 @@
     border-color: #ffc8c8; }
   .viewport--center {
     margin: auto; }
+  .viewport:hover {
+    -webkit-transform: rotate(5deg);
+            transform: rotate(5deg); }
 
 #viewport--grace {
   background-image: url("../img/grace-profile.jpg"); }
