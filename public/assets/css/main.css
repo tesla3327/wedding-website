@@ -6,6 +6,14 @@
 .center-text {
   text-align: center; }
 
+.radio-group {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around; }
+
 .body {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -418,13 +426,14 @@
   top: 0;
   width: 100%;
   height: 100%;
-  z-index: 4; }
+  z-index: 4;
+  opacity: 100%; }
   .rsvp-form__window {
     background-color: white;
     color: #646262;
     padding: 20px;
     width: 25em;
-    height: 35em;
+    height: 45em;
     border-radius: 20px;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -439,6 +448,10 @@
         -ms-flex-align: center;
             align-items: center;
     box-shadow: 0 7px 15px rgba(0, 0, 0, 0.3); }
+    .rsvp-form__window__additional-guests {
+      min-height: 50px; }
+      .rsvp-form__window__additional-guests label {
+        display: block; }
     .rsvp-form__window .h2 {
       margin-top: 10rpx; }
     .rsvp-form__window__close {
@@ -453,6 +466,8 @@
       -webkit-align-items: center;
           -ms-flex-align: center;
               align-items: center; }
+      .rsvp-form__window__buttons span {
+        padding-bottom: 5px; }
     .rsvp-form__window__form {
       width: 300px; }
 
@@ -565,3 +580,6 @@ form > div {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center; }
+
+.checkbox {
+  margin: 0; }
