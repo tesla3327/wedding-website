@@ -4,7 +4,6 @@ var _heights = [{
 }];
 var autoScrolling = false;
 
-
 function highlightOnScroll() {
   $('.anchor').each(function() {
     var top = $(this).position().top;
@@ -69,7 +68,8 @@ $(function() {
   }
 
   // Click for RSVP form popup
-  $('.event-info__info__rsvp button').click(function() {
+  $('#rsvp-btn-ontario').click(function() {
+    console.log('opening thing');
     $('.nav').animate({ top: '-60px' }, 200);
     $('.rsvp-form').removeClass('hide');
     $('body').css('overflow', 'hidden');
@@ -130,7 +130,8 @@ $(function() {
     });
 
     request.done(function(data) {
-      $('#invited').removeClass('hide');
+      $('#comments-window').removeClass('hide');
+      $('#rsvp-window').addClass('hide');
     });
 
     request.fail(function(err) {

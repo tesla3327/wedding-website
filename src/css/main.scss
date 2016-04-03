@@ -200,10 +200,6 @@ $hero-height: 800px;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	// animation: title-float 0.1s linear infinite;
-	// position: absolute;
-	// top: 0;
-	// left: 0;
 
 	@at-root &__date {
 		padding-top: 2em;
@@ -213,7 +209,6 @@ $hero-height: 800px;
 
 	@at-root &__grace, &__and, &__michael {
 		font-family: 'Satisfy', sans-serif;
-		transform: rotate(-10deg);
 	}
 
 	@at-root &__grace, &__michael {
@@ -238,8 +233,6 @@ $hero-height: 800px;
 }
 
 .bride-and-groom {
-	background-image: url('../img/grace-and-michael.jpg');
-	background-size: cover;
 	padding: 0;
 
 	@at-root &__overlay {
@@ -310,7 +303,6 @@ $hero-height: 800px;
 	margin: 15px;
 	background-size: 100%;
 	background-position: center;
-	transition: transform 0.3s ease;
 
 	@at-root &--small {
 		$size: 150px;
@@ -326,10 +318,6 @@ $hero-height: 800px;
 
 	@at-root &--center {
 		margin: auto;
-	}
-
-	@at-root &:hover {
-		transform: rotate(5deg);
 	}
 }
 

@@ -168,9 +168,7 @@
     font-family: 'Oswald', sans-serif;
     font-size: 3.5em; }
   .title__grace, .title__and, .title__michael {
-    font-family: 'Satisfy', sans-serif;
-    -webkit-transform: rotate(-10deg);
-            transform: rotate(-10deg); }
+    font-family: 'Satisfy', sans-serif; }
   .title__grace, .title__michael {
     font-size: 6em; }
   .title__and, .title__michael {
@@ -203,8 +201,6 @@
     left: -4px; } }
 
 .bride-and-groom {
-  background-image: url("../img/grace-and-michael.jpg");
-  background-size: cover;
   padding: 0; }
   .bride-and-groom__overlay {
     background-color: white;
@@ -271,10 +267,7 @@
   border-radius: 100px;
   margin: 15px;
   background-size: 100%;
-  background-position: center;
-  transition: -webkit-transform 0.3s ease;
-  transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease; }
+  background-position: center; }
   .viewport--small {
     width: 150px;
     height: 150px;
@@ -284,9 +277,6 @@
     border-color: #ffc8c8; }
   .viewport--center {
     margin: auto; }
-  .viewport:hover {
-    -webkit-transform: rotate(5deg);
-            transform: rotate(5deg); }
 
 #viewport--grace {
   background-image: url("../img/grace-profile.jpg"); }

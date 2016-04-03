@@ -349,7 +349,7 @@
     <!-- RSVP Form -->
     <div class="rsvp-form hide">
       <div class="darkness">
-        <div class="rsvp-form__window">
+        <div class="rsvp-form__window" id="rsvp-window">
 
           <h2 class="h2 h2--blush">Woo! RSVP Time!</h2>
 
@@ -395,6 +395,18 @@
           </div>
 
         </div>
+        <div class="rsvp-form__window comments-window hide" id="comments-window">
+          <h2 class="h2 h2--blush">Comments</h2>
+
+          <div class="rsvp-form__window__form">
+            <form>
+              <div>
+                <label>Please let us know of any dietary restrictions or any other comments you may have:</label>
+                <textarea class="input" id="comments"></textarea>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -402,7 +414,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/smooth-scroll.min.js"></script>
-    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>
