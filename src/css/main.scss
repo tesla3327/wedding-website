@@ -477,6 +477,26 @@ $hero-height: 800px;
 	}
 }
 
+.breadcrumbs {
+	border-bottom: 1px solid lightgrey;
+	width: 300px;
+	padding: 1em;
+	padding-top: 0;
+	display: flex;
+	justify-content: space-around;
+
+	@at-root & .active {
+		color: $dark-blush;
+	}
+}
+
+.rsvp-form-elements {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .rsvp-form {
     position: fixed;
     top: 0;
@@ -484,6 +504,13 @@ $hero-height: 800px;
     height: 100%;
     z-index: 4;
     opacity: 100%;
+
+    @at-root & textarea {
+    	resize: none;
+    	height: 250px;
+    	line-height: 23px;
+    	text-align: left;
+    }
 
     @at-root &__window {
 	    background-color: white;
@@ -494,7 +521,7 @@ $hero-height: 800px;
 	    border-radius: 20px;
 	    display: flex;
 	    flex-direction: column;
-	    justify-content: space-between;
+	    justify-content: flex-start;
 	    align-items: center;
 	    box-shadow: 0 7px 15px rgba(0,0,0,0.3);
 
@@ -520,8 +547,8 @@ $hero-height: 800px;
 	    	flex-direction: column;
 	    	align-items: center;
 
-	    	@at-root & span {
-	    		padding-bottom: 5px;
+	    	@at-root & button {
+	    		margin-top: 10px;
 	    	}
 	    }
 
@@ -529,6 +556,11 @@ $hero-height: 800px;
 	    	width: 300px;
 	    }
     }
+}
+
+.rsvp-form h2 {
+	text-align: center;
+	padding-bottom: 0.5em;
 }
 
 .registry {
@@ -629,6 +661,16 @@ form > div {
 
 .checkbox {
 	margin: 0;
+}
+
+.button.disabled,
+.button.disabled:hover,
+.button.disabled:active,
+.button.disabled:focus {
+	color: lightgray;
+	border-color: lightgray;
+	cursor: default;
+	background-color: rgba(0,0,0,0);
 }
 
 

@@ -21,6 +21,12 @@ var guestList = [
     { first: 'two', last: 'person'},
     { first: 'three', last: 'person'},
     { first: 'four', last: 'person'},
+  ],
+  [
+    { first: 'Matthew', last: 'Hayashida'},
+    { first: 'Ian', last: 'Reed'},
+    { first: 'Joel', last: 'Francis'},
+    { first: 'Matthew', last: 'Waldmann'},
   ]
 ];
 
@@ -78,6 +84,7 @@ app.post('/rsvp', function(req, res) {
   var last = req.body.last;
   var attending = req.body.attending;
   var email = req.body.email;
+  var comments = req.body.comments || '';
 
   var isMatch = false;
   var guest;
@@ -90,6 +97,7 @@ app.post('/rsvp', function(req, res) {
         guest = _guest;
         guest.attending = attending;
         guest.email = email;
+        guest.comments = comments;
         console.log('Match found');
       }
     });
@@ -114,6 +122,7 @@ function logGuest( guest ) {
   console.log('Name: ' + guest.first + ' ' + guest.last );
   console.log('Email: ' + guest.email );
   console.log('Attending: ' + (guest.attending ? 'yes' : 'no'));
+  console.log('Comments: ' + guest.comments);
 }
 
 function sendEmail( guest ) {
@@ -122,7 +131,7 @@ function sendEmail( guest ) {
     from: 'electromikenetic@gmail.com',
     to: 'electromikenetic@gmail.com',
     subject: '[RSVP] ' + guest.first + ' ' + guest.last + ' - ' + (guest.attending ? 'Attending' : 'Not Attending'),
-    text: 'Email: ' + guest.email
+    text: 'Email: ' + guest.email + '\n\nComments:\n' + (guest.comments || 'No comments.')
   };
    
   mailgun.messages().send(data, function (error, body) {

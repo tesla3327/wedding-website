@@ -411,6 +411,32 @@
   .button--dark {
     border-color: #ff9595; }
 
+.breadcrumbs {
+  border-bottom: 1px solid lightgrey;
+  width: 300px;
+  padding: 1em;
+  padding-top: 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around; }
+  .breadcrumbs .active {
+    color: #ff9595; }
+
+.rsvp-form-elements {
+  height: 100%;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
 .rsvp-form {
   position: fixed;
   top: 0;
@@ -418,6 +444,11 @@
   height: 100%;
   z-index: 4;
   opacity: 100%; }
+  .rsvp-form textarea {
+    resize: none;
+    height: 250px;
+    line-height: 23px;
+    text-align: left; }
   .rsvp-form__window {
     background-color: white;
     color: #646262;
@@ -431,9 +462,9 @@
     -webkit-flex-direction: column;
         -ms-flex-direction: column;
             flex-direction: column;
-    -webkit-justify-content: space-between;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
@@ -456,10 +487,14 @@
       -webkit-align-items: center;
           -ms-flex-align: center;
               align-items: center; }
-      .rsvp-form__window__buttons span {
-        padding-bottom: 5px; }
+      .rsvp-form__window__buttons button {
+        margin-top: 10px; }
     .rsvp-form__window__form {
       width: 300px; }
+
+.rsvp-form h2 {
+  text-align: center;
+  padding-bottom: 0.5em; }
 
 .registry {
   display: -webkit-flex;
@@ -573,3 +608,12 @@ form > div {
 
 .checkbox {
   margin: 0; }
+
+.button.disabled,
+.button.disabled:hover,
+.button.disabled:active,
+.button.disabled:focus {
+  color: lightgray;
+  border-color: lightgray;
+  cursor: default;
+  background-color: transparent; }

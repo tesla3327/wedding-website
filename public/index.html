@@ -351,62 +351,80 @@
       <div class="darkness">
         <div class="rsvp-form__window" id="rsvp-window">
 
-          <h2 class="h2 h2--blush">Woo! RSVP Time!</h2>
+          <div>
+            <h2 class="h2 h2--blush">Woo! RSVP Time!</h2>
 
-          <div class="rsvp-form__window__form">
-            <form>
-              <div>
-                <label class="label">First Name</label>
-                <input class="input" id="first-name-input">
-              </div>
-              <div>
-                <label class="label">Last Name</label>
-                <input class="input" id="last-name-input">
-              </div>
-              <div>
-                <label class="label">Email Address</label>
-                <input class="input" id="email-input">
-              </div>
-              <div class="radio-group">
-                <label class="radio-inline">
-                  <input type="radio" name="attendingRadios" id="attending" value="attending" checked> Attending
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="attendingRadios" id="not-attending" value="not-attending"> Not Attending
-                </label>
-              </div>
-            </form>
-          </div>
-
-          <div class="rsvp-form__window__additional-guests">
-            <div id="additional-guests">
-              <span>Include the following people in my RSVP:</span>
-              <div class="checkbox" id="list-of-guests">
-              </div>
+            <div class="breadcrumbs">
+              <span class="active" id="crumb-guests">1. Add Guests</span>
+              <span id="crumb-comments">2. Add Comments</span>
             </div>
           </div>
 
-          <div class="rsvp-form__window__buttons">
-            <span class="text-danger hide" id="not-invited">Sorry, we couldn't find you.</span>
-            <span class="text-success hide" id="invited">Thanks for letting us know!</span>
-            <span class="text-success hide" id="found">We found you on the list!</span>
-            <button class="button button--dark" id='submit-rsvp'>RSVP</button>
-            <a class="rsvp-form__window__close" href="#">Close</a>
-          </div>
+          <!-- Add Guests -->
+          <div id="guest-form" class="rsvp-form-elements">
+            <div class="rsvp-form__window__form">
+              <form>
+                <div>
+                  <label class="label">First Name</label>
+                  <input class="input" id="first-name-input">
+                </div>
+                <div>
+                  <label class="label">Last Name</label>
+                  <input class="input" id="last-name-input">
+                </div>
+                <div>
+                  <label class="label">Email Address</label>
+                  <input class="input" id="email-input">
+                </div>
+                <div class="radio-group">
+                  <label class="radio-inline">
+                    <input type="radio" name="attendingRadios" id="attending" value="attending" checked> Attending
+                  </label>
+                  <label class="radio-inline">
+                    <input type="radio" name="attendingRadios" id="not-attending" value="not-attending"> Not Attending
+                  </label>
+                </div>
+              </form>
+            </div>
 
-        </div>
-        <div class="rsvp-form__window comments-window hide" id="comments-window">
-          <h2 class="h2 h2--blush">Comments</h2>
-
-          <div class="rsvp-form__window__form">
-            <form>
-              <div>
-                <label>Please let us know of any dietary restrictions or any other comments you may have:</label>
-                <textarea class="input" id="comments"></textarea>
+            <div class="rsvp-form__window__additional-guests">
+              <div id="additional-guests">
+                <span>Include the following people in my RSVP:</span>
+                <div class="checkbox" id="list-of-guests">
+                </div>
               </div>
-            </form>
+            </div>
+
+            <div class="rsvp-form__window__buttons text-center">
+              <span class="text-danger hide not-invited">Sorry, we couldn't find you.</span>
+              <span class="text-success hide" id="found">We found you on the list!</span>
+              <button class="button button--dark disabled" id='add-comments'>Add Comments -></button>
+              <a class="rsvp-form__window__close" href="#">Close</a>
+            </div>
           </div>
+
+          <!-- Add Comments -->
+          <div id="comment-form" class="hide rsvp-form-elements">
+            <div class="rsvp-form__window__form">
+              <form>
+                <div>
+                  <label>Please let us know of any dietary restrictions or any other comments you may have:</label>
+                  <textarea class="input" id="comments"></textarea>
+                </div>
+              </form>
+            </div>
+
+            <div class="rsvp-form__window__buttons text-center">
+              <span class="text-danger hide not-invited">Sorry, we couldn't find you.</span>
+              <span class="text-success hide" id="invited">Thanks for letting us know!</span>
+              <button class="button button--dark" id='add-guests'><- Add Guests</button>
+              <button class="button button--dark" id='submit-rsvp'>RSVP</button>
+              <a class="rsvp-form__window__close" href="#">Close</a>
+            </div>
+          </div>
+
         </div>
+
       </div>
     </div>
 

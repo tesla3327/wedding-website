@@ -56,6 +56,7 @@ $(function() {
     $('#not-invited').addClass('hide');
     $('#invited').addClass('hide');
     $('#additional-guests').addClass('hide');
+    $('#add-comments').addClass('disabled');
     document.getElementById('list-of-guests').innerHTML = '';
   }
 
@@ -65,6 +66,41 @@ $(function() {
     document.getElementById('email-input').value = '';
     document.getElementById('attending').checked = true;
     document.getElementById('not-attending').checked = false;
+    document.getElementById('comments').value = '';
+  }
+
+  // Show comments form
+  $('#add-comments').click(function() {
+    if (!$(this).hasClass('disabled')) {
+      showComments();
+    }
+  });
+
+  // Show add guests form
+  $('#add-guests').click(function() {
+    showAddGuests();
+  });
+
+  function showComments() {
+    $('#guest-form').addClass('hide');
+    $('#comment-form').removeClass('hide');
+
+    $('#crumb-comments').addClass('active');
+    $('#crumb-guests').removeClass('active');
+
+    $('#add-guests').removeClass('hide');
+    $('#add-comments').addClass('hide');
+  }
+
+  function showAddGuests() {
+    $('#comment-form').addClass('hide');
+    $('#guest-form').removeClass('hide');
+
+    $('#crumb-comments').removeClass('active');
+    $('#crumb-guests').addClass('active');
+
+    $('#add-comments').removeClass('hide');
+    $('#add-guests').addClass('hide');
   }
 
   // Click for RSVP form popup
@@ -89,14 +125,18 @@ $(function() {
     var lastName = document.getElementById('last-name-input').value;
     var email = document.getElementById('email-input').value;
     var attending = document.getElementById('attending').checked ? true : false;
+    var comments = document.getElementById('comments').value;
 
     // Create a list of guests
     var guests = [];
+
+    // Main guest
     guests.push({
       first: firstName,
       last: lastName,
       email: email,
-      attending: attending
+      attending: attending,
+      comments: comments
     });
 
     // Find all of the additional guests
@@ -119,6 +159,9 @@ $(function() {
 
     // Send RSVPs for each person
     guests.forEach( rsvpForGuest );
+
+    // Feedback of confirmation
+    $('#invited').removeClass('hide');
   });
 
   function rsvpForGuest( guest ) {
@@ -130,8 +173,7 @@ $(function() {
     });
 
     request.done(function(data) {
-      $('#comments-window').removeClass('hide');
-      $('#rsvp-window').addClass('hide');
+      // $('#rsvp-window').addClass('hide');
     });
 
     request.fail(function(err) {
@@ -139,15 +181,16 @@ $(function() {
 
       // Not invited :/
       if (err.status === 401) {
-        $('#not-invited').removeClass('hide');
+        $('.not-invited').removeClass('hide');
       }
     });
   }
 
   // On Change check for name
-  $('#first-name-input, #last-name-input').on('keyup', function() {
+  $('#first-name-input, #last-name-input, #email-input').on('keyup', function() {
     var firstName = document.getElementById('first-name-input').value;
     var lastName = document.getElementById('last-name-input').value;
+    var email = document.getElementById('email-input').value;
 
     var request = $.ajax({
       method: 'GET',
@@ -161,16 +204,21 @@ $(function() {
       // to the list
       if (data.isMatch) {
         $('#found').removeClass('hide');
+        $('#add-comments').removeClass('disabled');
+
+        // Add additional guests to the form
+        if (data.additionalGuests.length > 0) {
+          $('#additional-guests').removeClass('hide');
+
+          data.additionalGuests.forEach(function(guest) {
+            var newElem = document.createElement('label');
+            newElem.innerHTML = '<input type="checkbox">' + guest.first + ' ' + guest.last;
+            document.getElementById('list-of-guests').appendChild(newElem);
+          });
+        }
       }
-
-      if (data.additionalGuests.length > 0) {
-        $('#additional-guests').removeClass('hide');
-
-        data.additionalGuests.forEach(function(guest) {
-          var newElem = document.createElement('label');
-          newElem.innerHTML = '<input type="checkbox">' + guest.first + ' ' + guest.last;
-          document.getElementById('list-of-guests').appendChild(newElem);
-        });
+      else if (firstName !== '' && lastName !== '' && email !== '') {
+        $('.not-invited').removeClass('hide');
       }
 
     });
