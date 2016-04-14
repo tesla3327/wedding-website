@@ -104,7 +104,7 @@ $(function() {
   }
 
   // Click for RSVP form popup
-  $('#rsvp-btn-ontario').click(function() {
+  $('#rsvp-btn-ontario, button.cta').click(function() {
     console.log('opening thing');
     $('.nav').animate({ top: '-60px' }, 200);
     $('.rsvp-form').removeClass('hide');

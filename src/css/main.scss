@@ -199,7 +199,8 @@ $hero-height: 800px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-start;
+	padding-top: 100px;
 
 	@at-root &__date {
 		padding-top: 2em;
@@ -207,8 +208,30 @@ $hero-height: 800px;
 		font-size: 3.5em;
 	}
 
+	@at-root
+	& .cta,
+	& .cta:focus,
+	& .cta:active {
+		z-index: 3;
+		margin-top: 100px;
+		background-color: $dark-navy;
+		border-color: $dark-navy;
+		color: white;
+		font-size: 1.7em;
+		height: 45px;
+		border-radius: 45px;
+		box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+	}
+
+	@at-root & .cta:hover {
+		background-color: white;
+		color: $soft-navy;
+		box-shadow: 0 2px 2px rgba(0,0,0,0.3);
+	}
+
 	@at-root &__grace, &__and, &__michael {
 		font-family: 'Satisfy', sans-serif;
+		transform: rotate(-10deg);
 	}
 
 	@at-root &__grace, &__michael {
