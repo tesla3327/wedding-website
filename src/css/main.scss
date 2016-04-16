@@ -110,6 +110,21 @@ $hero-height: 800px;
 
 	@at-root &--navy {
 		background-color: $soft-navy;
+
+		@at-root
+		& a,
+		& a:focus,
+		& a:active {
+			color: white;
+			text-decoration: underline;
+			transition: color 0.2s ease;
+		}
+
+		@at-root
+		& a:hover {
+			color: $blush;
+			text-decoration: underline;
+		}
 	}
 
 	@at-root &--blush {
@@ -419,6 +434,7 @@ $hero-height: 800px;
 	// justify-content: center;
 	flex-wrap: wrap;
 	padding-bottom: 6em;
+	min-height: 500px;
 
 	h1 {
 		padding-bottom: 0;
@@ -436,11 +452,12 @@ $hero-height: 800px;
 
 	@at-root &__info {
 		width: 450px;
-		height: 600px;
+		// height: 600px;
 		color: white;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		padding-right: 25px;
 
 		@at-root & strong {
 			font-weight: medium;
@@ -449,16 +466,17 @@ $hero-height: 800px;
 		@at-root &__detail {
 			padding-bottom: 20px;
 
-			@at-root &:last-child {
-				padding-bottom: 0;
-				margin-bottom: 0;
-			}
+			// @at-root &:last-child {
+			// 	padding-bottom: 0;
+			// 	margin-bottom: 0;
+			// }
 		}
 	}
 
 	@at-root &__map {
 		width: 450px;
 		height: 600px;
+		padding-left: 25px;
 		// background-image: url('../img/map.jpg');
 		// background-size: cover;
 		
@@ -467,6 +485,10 @@ $hero-height: 800px;
 			border-radius: 20px;
 		}
 	}
+}
+
+iframe {
+	height: 100%;
 }
 
 .button {
@@ -501,12 +523,14 @@ $hero-height: 800px;
 }
 
 .breadcrumbs {
-	border-bottom: 1px solid lightgrey;
 	width: 300px;
-	padding: 1em;
-	padding-top: 0;
+	padding: 0 1em;
 	display: flex;
 	justify-content: space-around;
+
+	@at-root & span {
+		padding-bottom: 2em;
+	}
 
 	@at-root & .active {
 		color: $dark-blush;
@@ -518,6 +542,10 @@ $hero-height: 800px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.header {
+	border-bottom: 1px solid lightgrey;
 }
 
 .rsvp-form {

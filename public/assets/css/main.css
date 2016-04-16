@@ -76,6 +76,15 @@
       color: white; }
   .section--navy {
     background-color: #4F78AB; }
+    .section--navy a,
+    .section--navy a:focus,
+    .section--navy a:active {
+      color: white;
+      text-decoration: underline;
+      transition: color 0.2s ease; }
+    .section--navy a:hover {
+      color: #ffc8c8;
+      text-decoration: underline; }
   .section--blush {
     background-color: #ffc8c8; }
 
@@ -366,7 +375,8 @@
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
-  padding-bottom: 6em; }
+  padding-bottom: 6em;
+  min-height: 500px; }
   .event-info h1 {
     padding-bottom: 0; }
   .event-info__content {
@@ -383,7 +393,6 @@
     padding-bottom: 3em; }
   .event-info__info {
     width: 450px;
-    height: 600px;
     color: white;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -393,20 +402,22 @@
             flex-direction: column;
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
-            justify-content: space-between; }
+            justify-content: space-between;
+    padding-right: 25px; }
     .event-info__info strong {
       font-weight: medium; }
     .event-info__info__detail {
       padding-bottom: 20px; }
-      .event-info__info__detail:last-child {
-        padding-bottom: 0;
-        margin-bottom: 0; }
   .event-info__map {
     width: 450px;
-    height: 600px; }
+    height: 600px;
+    padding-left: 25px; }
     .event-info__map img,
     .event-info__map iframe {
       border-radius: 20px; }
+
+iframe {
+  height: 100%; }
 
 .button {
   height: 40px;
@@ -431,16 +442,16 @@
     border-color: #ff9595; }
 
 .breadcrumbs {
-  border-bottom: 1px solid lightgrey;
   width: 300px;
-  padding: 1em;
-  padding-top: 0;
+  padding: 0 1em;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around; }
+  .breadcrumbs span {
+    padding-bottom: 2em; }
   .breadcrumbs .active {
     color: #ff9595; }
 
@@ -455,6 +466,9 @@
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between; }
+
+.header {
+  border-bottom: 1px solid lightgrey; }
 
 .rsvp-form {
   position: fixed;
