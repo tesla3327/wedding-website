@@ -9,26 +9,7 @@ var mailgun = require('mailgun-js')({
   domain: domain
 });
 
-var guestList = [
-  [
-    { first: 'Michael', last: 'Thiessen' },
-    { first: 'Grace', last: 'Teeninga' },
-  ],
-  [{ first: 'Carlin', last: 'Penner' }],
-  [{ first: 'Travis', last: 'Petkau' }],
-  [
-    { first: 'one', last: 'person'},
-    { first: 'two', last: 'person'},
-    { first: 'three', last: 'person'},
-    { first: 'four', last: 'person'},
-  ],
-  [
-    { first: 'Matthew', last: 'Hayashida'},
-    { first: 'Ian', last: 'Reed'},
-    { first: 'Joel', last: 'Francis'},
-    { first: 'Matthew', last: 'Waldmann'},
-  ]
-];
+var guestList = require('./guest_list');
 
 app.use(express.static(__dirname + '/../public'));
 app.use(bodyParser.json());

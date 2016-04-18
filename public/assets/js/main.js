@@ -3,6 +3,8 @@ var _heights = [{
   top: 0
 }];
 var autoScrolling = false;
+var API_URL = 'http://127.0.0.1:3000';
+// var API_URL = 'http://manitobatoontario.wedding';
 
 function highlightOnScroll() {
   $('.anchor').each(function() {
@@ -54,6 +56,7 @@ $(function() {
   function clearRSVP() {
     $('#found').addClass('hide');
     $('#not-invited').addClass('hide');
+    console.log('Hiding "not found"');
     $('#invited').addClass('hide');
     $('#additional-guests').addClass('hide');
     $('#add-comments').addClass('disabled');
@@ -168,7 +171,7 @@ $(function() {
     var request = $.ajax({
       method: 'POST',
       contentType: 'application/json',
-      url: '/rsvp',
+      url: API_URL + '/rsvp',
       data: JSON.stringify(guest)
     });
 
@@ -194,10 +197,8 @@ $(function() {
 
     var request = $.ajax({
       method: 'GET',
-      url: 'http://127.0.0.1:3000/checkName?first=' + firstName + '&last=' + lastName,
-    });
-
-    request.done(function(data) {
+      url: API_URL + '/checkName?first=' + firstName + '&last=' + lastName,
+    }).done(function(data) {
       clearRSVP();
 
       // If there are any additional people, we want to add them
@@ -218,7 +219,7 @@ $(function() {
         }
       }
       else if (firstName !== '' && lastName !== '' && email !== '') {
-        $('.not-invited').removeClass('hide');
+        $('#not-invited').removeClass('hide');
       }
 
     });
