@@ -365,6 +365,7 @@
     <!-- RSVP Form -->
     <div class="rsvp-form hide">
       <div class="darkness">
+        <div></div> <!-- Empty dummy div -->
         <div class="rsvp-form__window" id="rsvp-window">
 
           <div class="header">
@@ -413,8 +414,8 @@
 
             <div class="rsvp-form__window__buttons text-center">
               <span class="text-danger hide" id="not-invited">Sorry, we couldn't find you.</span>
-              <span class="text-success hide" id="found">We found you on the list!</span>
-              <button class="button button--dark disabled" id='add-comments'>Add Comments -></button>
+              <span class="text-success hide" id="found">We found you!<br>Please continue to finish RSVPing</span>
+              <button class="button button--dark disabled" id='add-comments'>Next -></button>
               <a class="rsvp-form__window__close" href="#">Close</a>
             </div>
           </div>
@@ -434,13 +435,16 @@
               <span class="text-danger hide not-invited">Sorry, we couldn't find you.</span>
               <span class="text-success hide" id="invited">Thanks for letting us know!</span>
               <button class="button button--dark" id='add-guests'><- Add Guests</button>
-              <button class="button button--dark" id='submit-rsvp'>RSVP</button>
+              <button class="button button--dark" id='submit-rsvp'>Send RSVP</button>
               <a class="rsvp-form__window__close" href="#">Close</a>
             </div>
           </div>
 
         </div>
-
+        <div class="contact">
+          <span>Let us know if you have any problems:</span><br>
+          <a href="mailto:electromikenetic@gmail.com">electromikenetic@gmail.com</a>
+        </div>
       </div>
     </div>
 

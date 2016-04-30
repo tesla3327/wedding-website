@@ -112,6 +112,9 @@
     line-height: 60px; }
   .nav__li {
     padding: 0 40px; }
+  .nav span {
+    padding: 10px;
+    color: #003D77; }
   .nav__a {
     transition: color 0.2s ease;
     color: #ff9595; }
@@ -477,6 +480,11 @@ iframe {
   height: 100%;
   z-index: 4;
   opacity: 100%; }
+  .rsvp-form .contact {
+    padding: 30px; }
+    .rsvp-form .contact a {
+      color: white;
+      text-decoration: underline; }
   .rsvp-form textarea {
     resize: none;
     height: 250px;
@@ -638,6 +646,8 @@ form > div {
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center; }
+  .darkness > div {
+    width: 25em; }
 
 .checkbox {
   margin: 0; }

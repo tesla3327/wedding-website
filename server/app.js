@@ -24,8 +24,8 @@ app.get('/testapi', function(req, res) {
 
 app.get('/checkName', function(req, res) {
   var checkGuest = {
-    first: req.query.first,
-    last: req.query.last
+    first: req.query.first.trim(),
+    last: req.query.last.trim()
   };
   var additionalGuests = [];
   var isMatch = false;

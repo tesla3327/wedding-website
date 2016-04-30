@@ -153,6 +153,11 @@ $hero-height: 800px;
 		padding: 0 40px;
 	}
 
+	@at-root & span {
+		padding: 10px;
+		color: $dark-navy;
+	}
+
 	@at-root &__a {
 		transition: color 0.2s ease;
 		color: $dark-blush;
@@ -556,6 +561,15 @@ iframe {
     z-index: 4;
     opacity: 100%;
 
+    & .contact {
+    	padding: 30px;
+
+    	a {
+    		color: white;
+    		text-decoration: underline;
+    	}
+    }
+
     @at-root & textarea {
     	resize: none;
     	height: 250px;
@@ -708,6 +722,10 @@ form > div {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
+    & > div {
+    	width: 25em;
+    }
 }
 
 .checkbox {
