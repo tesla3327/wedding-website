@@ -1,10 +1,15 @@
+/* 
+ * This code is terribly written and makes me sad :(
+ * Why didn't I just use React for this...
+ */
+
 var _heights = [{
   id: 'home',
   top: 0
 }];
 var autoScrolling = false;
-var API_URL = 'http://127.0.0.1:3000';
-// var API_URL = 'http://manitobatoontario.wedding';
+// CORS
+var API_URL = 'http://manitobatoontario.wedding';
 
 function highlightOnScroll() {
   $('.anchor').each(function() {
@@ -57,7 +62,6 @@ $(function() {
     $('#found').addClass('hide');
     $('#not-invited').addClass('hide');
     console.log('Hiding "not found"');
-    $('#invited').addClass('hide');
     $('#additional-guests').addClass('hide');
     $('#add-comments').addClass('disabled');
     document.getElementById('list-of-guests').innerHTML = '';
@@ -106,8 +110,13 @@ $(function() {
     $('#add-guests').addClass('hide');
   }
 
+  function showConfirmation() {
+    $('#rsvp-window').addClass('hide');
+    $('#confirmation').removeClass('hide');
+  }
+
   // Click for RSVP form popup
-  $('#rsvp-btn-ontario, button.cta').click(function() {
+  $('#rsvp-btn-manitoba, button.cta').click(function() {
     console.log('opening thing');
     $('.nav').animate({ top: '-60px' }, 200);
     $('.rsvp-form').removeClass('hide');
@@ -120,6 +129,11 @@ $(function() {
     $('.nav').animate({ top: '0' }, 200);
     $('.rsvp-form').addClass('hide');
     $('body').css('overflow', 'auto');
+
+    // Also remove confirmation stuffs
+    $('#rsvp-window').removeClass('hide');
+    $('#confirmation').addClass('hide');
+
     e.preventDefault();
   });
 
@@ -164,7 +178,10 @@ $(function() {
     guests.forEach( rsvpForGuest );
 
     // Feedback of confirmation
-    $('#invited').removeClass('hide');
+    showConfirmation();
+
+    // Switch the rsvp form to the first page
+    showAddGuests();
   });
 
   function rsvpForGuest( guest ) {

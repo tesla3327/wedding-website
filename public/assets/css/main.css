@@ -532,6 +532,14 @@ iframe {
         margin-top: 10px; }
     .rsvp-form__window__form {
       width: 300px; }
+    .rsvp-form__window--short {
+      height: 10em;
+      -webkit-flex-direction: column;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
 
 .rsvp-form h2 {
   text-align: center;
@@ -608,13 +616,15 @@ form,
 form > div {
   padding: 10px 0; }
 
+textarea.input {
+  padding: 20px; }
+
 .input {
   display: block;
   height: 40px;
   border-radius: 20px;
   border: 1px solid #93adcd;
   width: 100%;
-  padding: 20px;
   line-height: 40px;
   color: #646262;
   transition: box-shadow 0.2s ease;

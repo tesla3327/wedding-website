@@ -11,8 +11,16 @@ var mailgun = require('mailgun-js')({
 
 var guestList = require('./guest_list');
 
+
+
 app.use(express.static(__dirname + '/../public'));
 app.use(bodyParser.json());
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 app.get('/', function(req, res) {
   res.sendFile(__dirname + '/../public/index.html');
@@ -111,7 +119,7 @@ function sendEmail( guest ) {
   var data = {
     from: 'electromikenetic@gmail.com',
     to: 'electromikenetic@gmail.com',
-    subject: '[RSVP] ' + guest.first + ' ' + guest.last + ' - ' + (guest.attending ? 'Attending' : 'Not Attending'),
+    subject: '[RSVP MB] ' + guest.first + ' ' + guest.last + ' - ' + (guest.attending ? 'Attending' : 'Not Attending'),
     text: 'Email: ' + guest.email + '\n\nComments:\n' + (guest.comments || 'No comments.')
   };
    

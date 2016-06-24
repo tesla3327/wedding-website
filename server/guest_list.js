@@ -1,285 +1,148 @@
 module.exports = [
   [
-    { first: 'Ruth', last: 'Teeninga' },
-    { first: 'Peter', last: 'Teeninga' }
+    { first: 'Melvin', last: 'Thiessen' },
+    { first: 'Marilyn', last: 'Thiessen' }
+  ],
+  [{ first: 'Eva', last: 'Gerbrandt' }],
+  [
+    { first: 'James', last: 'Thiessen' },
+    { first: 'Juliann', last: 'Thiessen' }
   ],
   [
-    { first: 'Albert', last: 'Teeninga' },
-    { first: 'Betty', last: 'Teeninga' }
-  ],
-  [
-    { first: 'Jake', last: 'Teeninga' },
-    { first: 'Jenny', last: 'Teeninga' }
-  ],
-  [
-    { first: 'Bernard', last: 'Teeninga' },
-    { first: 'Anita', last: 'Teeninga' }
-  ],
-  [
-    { first: 'Hilda', last: 'Schuldis' },
-    { first: 'Gordon', last: 'Schuldis' }
-  ],
-  [
-    { first: 'Rob', last: 'DeWever' },
-    { first: 'Marian', last: 'DeWever' }
-  ],
-  [
-    { first: 'John', last: 'DeWever' },
-    { first: 'Francis', last: 'DeWever' }
-  ],
-  [
-    { first: 'Emma', last: 'DeWever' }
-  ],
-  [
-    { first: 'Maklane', last: 'DeWever' },
-    { first: 'Lisa', last: 'Tower' }
-  ],
-  [
-    { first: 'Opa', last: 'Teeninga' }
-  ],
-  [
-    { first: 'Eric', last: 'Schuldis' },
-    { first: 'Allyssa', last: 'Schuldis' }
-  ],
-  [
-    { first: 'Stephen', last: 'Schuldis' }
-  ],
-  [
-    { first: 'Emily', last: 'Schuldis' }
-  ],
-  [
-    { first: 'Anna', last: 'Gordon' },
-    { first: 'Nicholas', last: 'Gordon' }
-  ],
-  [
-    { first: 'Pieter', last: 'Teeninga' },
-    { first: 'Julia', last: 'Lorimer' }
-  ],
-  [
-    { first: 'Tina', last: 'Teeninga' },
-    { first: 'James', last: 'Ladan' },
-    { first: 'Calla', last: 'Ladan' },
-    { first: 'Theo', last: 'Ladan' }
-  ],
-  [
-    { first: 'Luke', last: 'Teeninga' },
-    { first: 'Jane Ann', last: 'Teeninga' }
-  ],
-  [
-    { first: 'Marcie', last: 'van Weerdhuizen' }
-  ],
-  [
-    { first: 'Kristen', last: 'Machina' },
-    { first: 'Andrew', last: 'Russell' }
-  ],
-  [
-    { first: 'Alysha', last: 'Kobylinski' },
-    { first: 'Gordon', last: 'Lesyk' }
-  ],
-  [
-    { first: 'Kayti', last: 'Van Til' },
-    { first: 'Steven', last: 'Brouwer' }
-  ],
-  [
-    { first: 'Amina', last: 'Kokic' }
-  ],
-  [
-    { first: 'Joe', last: 'Reid' }
-  ],
-  [
-    { first: 'Darren', last: 'DeMelo' },
-    { first: 'Julie', last: 'DeMelo' }
-  ],
-  [
-    { first: 'Ian', last: 'Reed' },
-    { first: 'Emma', last: 'Carroll' }
-  ],
-  [
-    { first: 'Ryan', last: 'Mann' },
-    { first: 'Deanna', last: 'Mann' }
-  ],
-  [
-    { first: 'Matthew', last: 'Hayashida' }
-  ],
-  [
-    { first: 'Matthew', last: 'Waldmann' }
-  ],
-  [
-    { first: 'Joel', last: 'Francis' }
-  ],
-  [
-    { first: 'Andrea', last: 'Bruinsma' },
-    { first: 'Jesse', last: 'Featherstone' }
-  ],
-  [
-    { first: 'Heather', last: 'Homewood' }
-  ],
-  [
-    { first: 'Carolyn', last: 'McCormick' }
-  ],
-  /*
-   * We don't know his last name :(
-   */
-  [
-    { first: 'Pang', last: 'Sing Koh' }
-  ],
-  [
-    { first: 'Pang Sing', last: 'Koh' }
-  ],
-  [
-    { first: 'Pang', last: 'Sing' }
-  ],
-  [
-    { first: 'Edgar', last: 'De Souza' },
-    { first: 'Tania', last: 'De Souza' }
-  ],
-  [
-    { first: 'Fred', last: 'Penney' },
-    { first: 'Valerie', last: 'Penney' }
-  ],
-  [
-    { first: 'Joel', last: 'Penney' },
-    { first: 'Nicole', last: 'Penney' }
-  ],
-  [
-    { first: 'Nathan', last: 'Penney' },
-    { first: 'Leah', last: 'Rondeau' }
-  ],
-  [
-    { first: 'Heather', last: 'Penney' },
-    { first: 'Jordan', last: 'Fisher' }
-  ],
-  [
-    { first: 'Julia', last: 'Penney' },
-    { first: 'Ryan', last: 'Lofgren' }
-  ],
-  [
-    { first: 'Barb', last: 'Buldyke' },
-    { first: 'Don', last: 'Buldyke' }
-  ],
-  [
-    { first: 'Archie', last: 'Barnhoorn' },
-    { first: 'Rita', last: 'Barnhoorn' }
-  ],
-  [
-    { first: 'Tim', last: 'Dell\'Anna' },
-    { first: 'Yevette', last: 'Dell\'Anna' }
-  ],
-  [
-    { first: 'Elizabeth', last: 'Kidnew' },
-    { first: 'Al', last: 'Kidnew' }
-  ],
-  [
-    { first: 'Josta', last: 'Roebroeck' },
-    { first: 'Marcel', last: 'Roebroeck' }
-  ],
-  [
-    { first: 'John', last: 'Shaw-Rimmington' },
-    { first: 'Mary', last: 'Shaw-Rimmington' }
-  ],
-  [
-    { first: 'Frank', last: 'Brandon' },
-    { first: 'Carol', last: 'Brandon' }
-  ],
-  [
-    { first: 'Joelle', last: 'van Oudenaren' },
-    { first: 'Jesse', last: 'Lambert' }
+    { first: 'Allen', last: 'Thiessen' },
+    { first: 'Marilyn', last: 'Thiessen' }
   ],
   [
     { first: 'Myron', last: 'Thiessen' },
     { first: 'Shirley', last: 'Thiessen' }
   ],
   [
-    { first: 'Kimberly', last: 'Dyck' },
+    { first: 'Gerald', last: 'Thiessen' },
+    { first: 'Agatha', last: 'Thiessen' },
+    { first: 'Ashton', last: 'Thiessen' },
+    { first: 'Zachary', last: 'Thiessen' }
+  ],
+  [
+    { first: 'Charlene', last: 'Krause' },
+    { first: 'Sam', last: 'Krause' }
+  ],
+  [
+    { first: 'Wayne', last: 'Gryde' },
+    { first: 'Nicole', last: 'Gryde' }
+  ],
+  [
+    { first: 'Jonathan', last: 'David' },
+    { first: 'Vanessa', last: 'David' }
+  ],
+  [
+    { first: 'Jonathan', last: 'Thiessen' },
+    { first: 'Lois', last: 'Thiessen' }
+  ],
+  [
+    { first: 'Landon', last: 'Elhard' },
+    { first: 'Elishema', last: 'Elhard' }
+  ],
+  [
+    { first: 'Joshua', last: 'Thiessen' },
+    { first: 'Cara', last: 'Thiessen' }
+  ],
+  [{ first: 'Jerome', last: 'Thiessen' }],
+  [
+    { first: 'Mark', last: 'Thiessen' },
+    { first: 'Helen', last: 'Thiessen' }
+  ],
+  [
+    { first: 'Matthew', last: 'Thiessen' },
+    { first: 'Ashley', last: 'Thiessen' }
+  ],
+  [
+    { first: 'Tim', last: 'Thiessen' },
+    { first: 'Angela', last: 'Thiessen' }
+  ],
+  [
+    { first: 'JJ', last: 'Thiessen' },
+    { first: 'Lorissa', last: 'Thiessen' }
+  ],
+  [
     { first: 'Greg', last: 'Dyck' },
-    { first: 'Hannah', last: 'Dyck' },
-    { first: 'Aaron', last: 'Dyck' },
+    { first: 'Kimberly', last: 'Dyck' }
   ],
   [
-    { first: 'Dianne', last: 'Hiebert' },
-    { first: 'Darrel', last: 'Hiebert' }
+    { first: 'Marvin', last: 'Gerbrandt' },
+    { first: 'Gayle', last: 'Gerbrandt' }
   ],
   [
-    { first: 'Dale', last: 'Hiebert' },
-    { first: 'Isabel', last: 'Hiebert' }
+    { first: 'Brian', last: 'Gerbrandt' },
+    { first: 'Liz', last: 'Gerbrandt' }
+  ],
+  [
+    { first: 'Dale', last: 'Gerbrandt' },
+    { first: 'Deb', last: 'Gerbrandt' }
+  ],
+  [
+    { first: 'Myles', last: 'Gerbrandt' },
+    { first: 'Cindy', last: '' }
+  ],
+  [
+    { first: 'Curtis', last: 'Gerbrandt' },
+    { first: 'Cassie', last: 'Gerbrandt' }
+  ],
+  [
+    { first: 'Brad', last: 'Gerbrandt' },
+    { first: 'Renne', last: '' }
+  ],
+  [{ first: 'Jackson', last: 'Gerbrandt' }],
+  [{ first: 'Carmel', last: 'Gerbrandt' }],
+  [
+    { first: 'Roger', last: 'Hiebert' },
+    { first: 'Kendal', last: 'Hiebert' }
+  ],
+  [
+    { first: 'Joe', last: 'Froese' },
+    { first: 'Robyn', last: 'Froese' }
+  ],
+  [
+    { first: 'Dallas', last: 'Gerbrandt' },
+    { first: 'Jenny', last: 'Gerbrandt' }
+  ],
+  [
+    { first: 'Darrel', last: 'Hiebert' },
+    { first: 'Dianne', last: 'Hiebert' }
   ],
   [
     { first: 'Devan', last: 'Hiebert' },
     { first: 'Catherine', last: 'Hiebert' }
   ],
   [
-    { first: 'Carlin', last: 'Penner' }
+    { first: 'Dale', last: 'Hiebert' },
+    { first: 'Izzy', last: 'Hiebert' }
   ],
   [
-    { first: 'Iain', last: 'Friesen' }
+    { first: 'Quintin', last: 'Giesbrecht' },
+    { first: 'Beth', last: 'Giesbrecht' }
   ],
+  [{ first: 'Zachary', last: 'Giesbrecht' }],
   [
-    { first: 'Travis', last: 'Petkau' }
-  ],
-  [
-    { first: 'Julian', last: 'Kehler' },
-    { first: 'Kara', last: 'Banman' },
-  ],
-  [
-    { first: 'Jaelyn', last: 'Froese' },
-    { first: 'Shane', last: 'Froese' },
-  ],
-  [
-    { first: 'Emilie', last: 'Jackson' },
-    { first: 'Matt', last: 'Dueck' },
-  ],
-  [
-    { first: 'Dana', last: 'Doerksen' }
-  ],
-  [
-    { first: 'Elizabeth', last: 'Grauer' }
-  ],
-  [
-    { first: 'Jori', last: 'Schalla' },
-    { first: 'Kyle', last: 'Dueck' },
-  ],
-  [
-    { first: 'Natalie', last: 'Hamm' }
-  ],
-  [
-    { first: 'Janelle', last: 'Heier' }
+    { first: 'Gerald', last: 'Wiebe' },
+    { first: 'Tammy', last: 'Wiebe' }
   ],
   [
     { first: 'Doug', last: 'Reimer' },
-    { first: 'Janelle', last: 'Reimer' },
+    { first: 'Janelle', last: 'Reimer' }
   ],
   [
-    { first: 'Marvin', last: 'Gerbrandt' },
-    { first: 'Gale', last: 'Gerbrandt' },
+    { first: 'Peter', last: 'Teeninga' },
+    { first: 'Ruth', last: 'Teeninga' }
   ],
   [
-    { first: 'Brian', last: 'Gerbrandt' },
-    { first: 'Liz', last: 'Gerbrandt' },
-  ],
-  [
-    { first: 'Dale', last: 'Gerbrandt' },
-    { first: 'Deb', last: 'Gerbrandt' },
-  ],
-  [
-    { first: 'Gerald', last: 'Thiessen' },
-    { first: 'Agatha', last: 'Thiessen' },
-  ],
-  [
-    { first: 'Melvin', last: 'Thiessen' },
-    { first: 'Marilyn', last: 'Thiessen' },
-  ],
-  [
-    { first: 'James', last: 'Thiessen' },
-    { first: 'Julianne', last: 'Thiessen' },
-  ],
-  [
-    { first: 'Allen', last: 'Thiessen' },
-    { first: 'Marilyn', last: 'Thiessen' },
+    { first: 'Nicholas', last: 'Gordon' },
+    { first: 'Anna', last: 'Gordon' }
   ],
   [
     { first: 'Kyle', last: 'Sheppard' },
-    { first: 'Bianca', last: 'Visram' },
-  ]
+    { first: 'Bianca', last: 'Sheppard' }
+  ],
+  [{ first: 'Ken', last: 'Fehr' }]
 ];  
 
 
