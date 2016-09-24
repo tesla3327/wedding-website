@@ -484,15 +484,10 @@ $hero-height: 800px;
 		padding-left: 25px;
 		// background-image: url('../img/map.jpg');
 		// background-size: cover;
-		
-		@at-root & img,
-				 & iframe {
-			border-radius: 20px;
-		}
 	}
 }
 
-iframe {
+.event-info__map iframe {
 	height: 100%;
 }
 
@@ -751,8 +746,16 @@ textarea.input {
 	background-color: rgba(0,0,0,0);
 }
 
+.video {
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	margin-bottom: 60px;
 
-
+	iframe {
+		margin-bottom: 20px;
+	}
+}
 
 
 

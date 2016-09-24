@@ -32,12 +32,25 @@
             <h1 class="title__and hero__h1">&</h1>
             <h1 class="title__michael hero__h1">Michael</h1>
             <h1 class="title__date hero__h1">July 9, 2016</h1>
-            <button class="button cta">RSVP for Manitoba</button>
           </div>
 
       </div>
     </section>
     <!-- End Hero section -->
+
+    <!-- Video Section -->
+    <section>
+      <div class="anchor" id="video"></div>
+      <div class="container-fluid section video">
+
+        <h1 class="section__h1">Video</h1>
+        <iframe width="600" height="338" src="https://www.youtube.com/embed/Kt8T915Ly7M" frameborder="0" allowfullscreen></iframe>
+        <p>This video beautifully captures the day.</p>
+        <p>Huge thanks to <a href="http://www.jfhanniganphoto.com/">JF Hannigan Photography</a> and <a href="http://mrp.tv">Mitchell Reilly Productions</a>.</p>
+
+      </div>
+    </section>
+    <!-- End Video Section -->
 
     <!-- Bride and Groom -->
     <section>
@@ -282,16 +295,6 @@
               </p>
 
             </div>
-            <div class="event-info__info__rsvp">
-              <div class="event-info__info__detail">
-                <p>
-                  <strong>Please RSVP by</strong>
-                  <br>
-                  August 9, 2016
-                </p>
-                <button class="button" id="rsvp-btn-manitoba">RSVP for Manitoba</button>
-              </div>
-            </div>
           </div>
 
           <!-- Map -->
@@ -305,29 +308,6 @@
     </section>
     <!-- End Event Information -->
 
-    <!-- Registry -->
-    <section>
-      <div class="anchor" id="registry"></div>
-      <div class="container-fluid section section--navy registry">
-
-        <h1 class="section__h1 section__h1--white">We are registered at</h1>
-        <div class="registry__logos">
-          <div class="registry__logos__logo">
-            <a href="https://www.myregistry.com/wedding-registry/Michael-Thiessen-Grace-Teeninga-Waterloo-ON/991852">
-              <img class="my-registry" src="assets/img/myregistry.png">
-            </a>
-          </div>
-          <div class="registry__logos__logo">
-            <a href="http://giftregistry.hbc.com/grworks/grws">
-              <img class="the-bay" src="assets/img/bay.png">
-            </a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-    <!-- End Registry -->
-
     <section>
       <div class="container-fluid section footer section--navy">
         <span>Built with love &hearts;</span>
@@ -338,106 +318,14 @@
     <nav class="section nav">
       <ul class="nav__ul">
         <li class="nav__li"><a data-scroll scroll="#home" class="nav__a active">Home</a></li>
+        <li class="nav__li"><a data-scroll scroll="#video" class="nav__a">Video</a></li>
         <li class="nav__li"><a data-scroll scroll="#bride-groom" class="nav__a">Bride & Groom</a></li>
         <li class="nav__li"><a data-scroll scroll="#bridal-party" class="nav__a">Bridal Party</a></li>
         <li class="nav__li"><a data-scroll scroll="#ontario" class="nav__a">Ontario</a></li>
         <li class="nav__li"><a data-scroll scroll="#manitoba" class="nav__a">Manitoba</a></li>
-        <li class="nav__li"><a data-scroll scroll="#registry" class="nav__a">Registry</a></li>
       </ul>
     </nav>
     <!-- End Navigation -->
-
-    <!-- RSVP Form -->
-    <div class="rsvp-form hide">
-      <div class="darkness">
-        <div></div> <!-- Empty dummy div -->
-        <div class="rsvp-form__window" id="rsvp-window">
-
-          <div class="header">
-            <h2 class="h2 h2--blush">Woo! RSVP Time!</h2>
-
-            <div class="breadcrumbs">
-              <span class="active" id="crumb-guests">1. Add Guests</span>
-              <span id="crumb-comments">2. Add Comments</span>
-            </div>
-          </div>
-
-          <!-- Add Guests -->
-          <div id="guest-form" class="rsvp-form-elements">
-            <div class="rsvp-form__window__form">
-              <form>
-                <div>
-                  <label class="label">First Name</label>
-                  <input class="input" id="first-name-input">
-                </div>
-                <div>
-                  <label class="label">Last Name</label>
-                  <input class="input" id="last-name-input">
-                </div>
-                <div>
-                  <label class="label">Email Address</label>
-                  <input class="input" id="email-input">
-                </div>
-                <div class="radio-group">
-                  <label class="radio-inline">
-                    <input type="radio" name="attendingRadios" id="attending" value="attending" checked> Attending
-                  </label>
-                  <label class="radio-inline">
-                    <input type="radio" name="attendingRadios" id="not-attending" value="not-attending"> Not Attending
-                  </label>
-                </div>
-              </form>
-            </div>
-
-            <div class="rsvp-form__window__additional-guests">
-              <div id="additional-guests">
-                <span>Include the following people in my RSVP:</span>
-                <div class="checkbox" id="list-of-guests">
-                </div>
-              </div>
-            </div>
-
-            <div class="rsvp-form__window__buttons text-center">
-              <span class="text-danger hide" id="not-invited">Sorry, we couldn't find you.</span>
-              <span class="text-success hide" id="found">We found you!<br>Please continue to finish RSVPing</span>
-              <button class="button button--dark disabled" id='add-comments'>Next -></button>
-              <a class="rsvp-form__window__close" href="#">Close</a>
-            </div>
-          </div>
-
-          <!-- Add Comments -->
-          <div id="comment-form" class="hide rsvp-form-elements">
-            <div class="rsvp-form__window__form">
-              <form>
-                <div>
-                  <label>Please let us know of any dietary restrictions or any other comments you may have:</label>
-                  <textarea class="input" id="comments"></textarea>
-                </div>
-              </form>
-            </div>
-
-            <div class="rsvp-form__window__buttons text-center">
-              <button class="button button--dark" id='add-guests'><- Add Guests</button>
-              <button class="button button--dark" id='submit-rsvp'>Send RSVP</button>
-              <a class="rsvp-form__window__close" href="#">Close</a>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="hide rsvp-form__window rsvp-form__window--short" id="confirmation">
-          <h2 class="h2 h2--blush">Thanks for letting us know!</h2>
-          <div class="rsvp-form__window__buttons text-center">
-            <a class="rsvp-form__window__close" href="#">Close</a>
-          </div>
-        </div>
-
-        <div class="contact">
-          <span>Let us know if you have any problems:</span><br>
-          <a href="mailto:electromikenetic@gmail.com">electromikenetic@gmail.com</a>
-        </div>
-      </div>
-    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>

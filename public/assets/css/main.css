@@ -415,11 +415,8 @@
     width: 450px;
     height: 600px;
     padding-left: 25px; }
-    .event-info__map img,
-    .event-info__map iframe {
-      border-radius: 20px; }
 
-iframe {
+.event-info__map iframe {
   height: 100%; }
 
 .button {
@@ -670,3 +667,17 @@ textarea.input {
   border-color: lightgray;
   cursor: default;
   background-color: transparent; }
+
+.video {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 60px; }
+  .video iframe {
+    margin-bottom: 20px; }
