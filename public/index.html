@@ -38,20 +38,6 @@
     </section>
     <!-- End Hero section -->
 
-    <!-- Video Section -->
-    <section>
-      <div class="anchor" id="video"></div>
-      <div class="container-fluid section video">
-
-        <h1 class="section__h1">Video</h1>
-        <iframe width="600" height="338" src="https://www.youtube.com/embed/6IYXtPWucVs" frameborder="0" allowfullscreen></iframe>
-        <p>This video beautifully captures the day.</p>
-        <p>Huge thanks to <a href="http://www.jfhanniganphoto.com/">JF Hannigan Photography</a> and <a href="http://mrp.tv">Mitchell Reilly Productions</a>.</p>
-
-      </div>
-    </section>
-    <!-- End Video Section -->
-
     <!-- Bride and Groom -->
     <section>
       <div class="anchor" id="bride-groom"></div>
@@ -179,6 +165,35 @@
       </div>
     </section>
     <!-- End Bridal Party -->
+
+    <!-- Video Section -->
+    <section>
+      <div class="anchor" id="video"></div>
+      <div class="container-fluid section video">
+
+        <h1 class="section__h1">Video</h1>
+        <iframe width="600" height="338" src="https://www.youtube.com/embed/Kt8T915Ly7M" frameborder="0" allowfullscreen></iframe>
+        <p>This video beautifully captures the day.</p>
+        <p>Huge thanks to <a href="http://www.jfhanniganphoto.com/">JF Hannigan Photography</a> and <a href="http://mrp.tv">Mitchell Reilly Productions</a>.</p>
+
+      </div>
+    </section>
+    <!-- End Video Section -->
+
+    <!-- Photos Section -->
+    <section>
+      <div class="anchor" id="photos"></div>
+      <div class="container-fluid section photos">
+
+        <h1 class="section__h1">Photos</h1>
+
+        <div id="photo-list" class="photo-list">
+          <!-- Photos get automatically inserted here -->
+        </div>
+
+      </div>
+    </section>
+    <!-- End Photos Section -->
 
     <!-- Event Information -->
     <section>
@@ -318,9 +333,10 @@
     <nav class="section nav">
       <ul class="nav__ul">
         <li class="nav__li"><a data-scroll scroll="#home" class="nav__a active">Home</a></li>
-        <li class="nav__li"><a data-scroll scroll="#video" class="nav__a">Video</a></li>
         <li class="nav__li"><a data-scroll scroll="#bride-groom" class="nav__a">Bride & Groom</a></li>
         <li class="nav__li"><a data-scroll scroll="#bridal-party" class="nav__a">Bridal Party</a></li>
+        <li class="nav__li"><a data-scroll scroll="#video" class="nav__a">Video</a></li>
+        <li class="nav__li"><a data-scroll scroll="#photos" class="nav__a">Photos</a></li>
         <li class="nav__li"><a data-scroll scroll="#ontario" class="nav__a">Ontario</a></li>
         <li class="nav__li"><a data-scroll scroll="#manitoba" class="nav__a">Manitoba</a></li>
       </ul>
@@ -331,6 +347,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.js"></script>
+    <script src="components/PhotoGallery.js"></script>
     <script src="assets/js/main.js"></script>
   </body>
 </html>

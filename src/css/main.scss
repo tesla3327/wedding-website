@@ -757,6 +757,64 @@ textarea.input {
 	}
 }
 
+.photos {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 70px;
+}
+
+.photo-list > div {
+	max-width: 1000px;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+
+	> a > div {
+		width: 200px;
+		height: 200px;
+		margin: 10px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+}
+
+/** LIGHTBOX MARKUP **/
+
+.lightbox {
+	/** Default lightbox to hidden */
+	display: none;
+
+	/** Position and style */
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	top: 0;
+	left: 0;
+	background: rgba(0,0,0,0.85);
+	justify-content: center;
+	align-items: center;
+}
+
+.lightbox img {
+	/** Pad the lightbox image */
+	max-width: 80%;
+	max-height: 80%;
+	margin-top: 2%;
+}
+
+.lightbox:target {
+	/** Remove default browser outline */
+	outline: none;
+
+	/** Unhide lightbox **/
+	display: flex;
+}
+
 
 
 
