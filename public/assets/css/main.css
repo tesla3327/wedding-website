@@ -607,7 +607,7 @@ textarea.input {
       align-items: center;
   margin-bottom: 70px; }
 
-.photo-list > div {
+.photo-list > div > div {
   max-width: 1000px;
   display: -ms-flexbox;
   display: flex;
@@ -615,7 +615,7 @@ textarea.input {
       flex-flow: row wrap;
   -ms-flex-pack: center;
       justify-content: center; }
-  .photo-list > div > a > div {
+  .photo-list > div > div > a > div {
     width: 200px;
     height: 200px;
     margin: 10px;

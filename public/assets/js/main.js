@@ -93,7 +93,7 @@ $(function() {
 
   // Mount our React component
   ReactDOM.render(
-    React.createElement(PhotoGallery, { photos: 5 }),
+    React.createElement(PhotoGallery, { photos: 12 }),
     document.getElementById('photo-list')
   );
 });

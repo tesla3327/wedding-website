@@ -10,10 +10,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var Photo = function Photo(_ref) {
   var url = _ref.url,
-      id = _ref.id;
+      id = _ref.id,
+      handleClick = _ref.handleClick;
   return React.createElement(
     'a',
-    { href: '#' + id },
+    { href: '#' + id, onClick: function onClick() {
+        return handleClick(id);
+      } },
     React.createElement('div', { style: { backgroundImage: 'url("' + url + '")' } })
   );
 };
@@ -42,70 +45,120 @@ var links = {
 var Lightbox = function Lightbox(_ref2) {
   var url = _ref2.url,
       id = _ref2.id,
-      max = _ref2.max;
+      max = _ref2.max,
+      handleClick = _ref2.handleClick;
   return React.createElement(
     'a',
     { href: '#_', id: id, className: 'lightbox' },
-    React.createElement(
+    id > 1 ? React.createElement(
       'div',
       { style: Object.assign({}, navBtnStyle, { left: '0' }) },
       React.createElement(
         'a',
-        { href: '#' + (id > 1 ? id - 1 : 1), style: links },
+        { href: '#' + (id > 1 ? id - 1 : 1), style: links, onClick: function onClick() {
+            return handleClick(id - 1);
+          } },
         '<'
       )
-    ),
+    ) : null,
     React.createElement('img', { src: url }),
-    React.createElement(
+    id < max ? React.createElement(
       'div',
       { style: Object.assign({}, navBtnStyle, { right: '0' }) },
       React.createElement(
         'a',
-        { href: '#' + (id < max ? id + 1 : max), style: links },
+        { href: '#' + (id < max ? id + 1 : max), style: links, onClick: function onClick() {
+            return handleClick(id + 1);
+          } },
         '>'
       )
-    )
+    ) : null
   );
 };
 
 var PhotoGallery = function (_React$Component) {
   _inherits(PhotoGallery, _React$Component);
 
-  function PhotoGallery() {
+  function PhotoGallery(props) {
     _classCallCheck(this, PhotoGallery);
 
-    return _possibleConstructorReturn(this, (PhotoGallery.__proto__ || Object.getPrototypeOf(PhotoGallery)).apply(this, arguments));
+    var _this = _possibleConstructorReturn(this, (PhotoGallery.__proto__ || Object.getPrototypeOf(PhotoGallery)).call(this, props));
+
+    _this.state = {
+      photos: props.photos
+    };
+    return _this;
   }
 
   _createClass(PhotoGallery, [{
     key: 'render',
     value: function render() {
+      var _this2 = this;
+
       var photos = [];
       var lightboxes = [];
+      var links = [];
 
-      for (var i = 1; i <= this.props.photos; i++) {
-        var url = 'assets/img-high-res/' + i + '.jpg';
+      // console.log(this.state.viewing);
+
+      // for (let i = 1; i <= this.state.photos; i++) {
+      //   const base = 'http://manitobatoontario.wedding/assets/img';
+      //   const resizedUrl = `${base}/wedding-resized/m&g-${i}.JPG`;
+
+      //   links.push({"rel": "prefetch", "href": resizedUrl});
+      // }
+
+      // links.forEach(link => {
+      //   const elem = document.createElement('link');
+      //   elem.rel = link.rel;
+      //   elem.href = link.href;
+
+      //   document.head.appendChild(elem);
+      // });
+
+      for (var i = 1; i <= this.state.photos; i++) {
+        var base = 'http://manitobatoontario.wedding/assets/img';
+        var thumbUrl = base + '/wedding-thumbs/m&g-' + i + '.JPG';
+        var resizedUrl = base + '/wedding-resized/m&g-' + i + '.JPG';
+
         photos.push(React.createElement(Photo, {
+          handleClick: function handleClick(id) {
+            return _this2.setState({ viewing: id });
+          },
           key: i,
           id: i,
-          url: url
+          url: thumbUrl
         }));
         lightboxes.push(React.createElement(Lightbox, {
           key: i,
-          url: url,
+          handleClick: function handleClick(id) {
+            return _this2.setState({ viewing: id });
+          },
+          url: resizedUrl,
           id: i,
-          max: this.props.photos
+          max: this.state.photos
         }));
       }
 
       return React.createElement(
         'div',
-        null,
-        photos,
+        { style: { display: 'flex', flexFlow: 'column', alignContent: 'center' } },
         React.createElement(
           'div',
-          { className: 'lightboxes' },
-          lightboxes
+          null,
+          photos,
+          React.createElement(
+            'div',
+            { className: 'lightboxes' },
+            lightboxes
+          )
+        ),
+        React.createElement(
+          'a',
+          { style: { textAlign: 'center', paddingTop: '20px' }, onClick: function onClick() {
+              return _this2.setState({ photos: _this2.state.photos + 12 });
+            } },
+          'Load more'
         )
       );
     }
