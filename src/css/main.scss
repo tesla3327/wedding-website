@@ -135,6 +135,7 @@ $hero-height: 800px;
 .nav {
 	position: fixed;
 	height: $nav-height;
+	top: 0;
 	width: 100%;
 	order: -1;
 	background-color: white;

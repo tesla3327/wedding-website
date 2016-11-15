@@ -71,6 +71,8 @@ $(function() {
   $('.nav a').click(function(e) {
     e.preventDefault();
 
+    highlightOnScroll();
+
     $('.nav a').removeClass('active');
     var top = 0;
     var href = $(this).attr('scroll');
@@ -89,7 +91,7 @@ $(function() {
   });
 
   // addImages(10);
-  highlightOnScroll();
+  // highlightOnScroll();
 
   // Mount our React component
   ReactDOM.render(

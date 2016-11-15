@@ -87,6 +87,7 @@
 .nav {
   position: fixed;
   height: 60px;
+  top: 0;
   width: 100%;
   -ms-flex-order: -1;
       order: -1;

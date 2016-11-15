@@ -10,6 +10,7 @@ const navBtnStyle = {
   fontSize: '40px',
   position: 'absolute',
   height: '100%',
+  top: 0,
   width: '50px',
   display: 'flex',
   justifyContent: 'center',
@@ -109,9 +110,11 @@ class PhotoGallery extends React.Component {
             { lightboxes }
           </div>
         </div>
-        <a style={{ textAlign: 'center', paddingTop: '20px' }} onClick={ () => this.setState({ photos: this.state.photos + 12 }) }>
-          Load more
-        </a>
+        { this.state.photos < 450
+          ? (<a style={{ textAlign: 'center', paddingTop: '20px' }} onClick={ () => this.setState({ photos: this.state.photos + 12 }) }>
+              Load more
+            </a>)
+          : null }
       </div>
     );
   }

@@ -27,6 +27,7 @@ var navBtnStyle = {
   fontSize: '40px',
   position: 'absolute',
   height: '100%',
+  top: 0,
   width: '50px',
   display: 'flex',
   justifyContent: 'center',
@@ -153,13 +154,13 @@ var PhotoGallery = function (_React$Component) {
             lightboxes
           )
         ),
-        React.createElement(
+        this.state.photos < 450 ? React.createElement(
           'a',
           { style: { textAlign: 'center', paddingTop: '20px' }, onClick: function onClick() {
               return _this2.setState({ photos: _this2.state.photos + 12 });
             } },
           'Load more'
-        )
+        ) : null
       );
     }
   }]);
