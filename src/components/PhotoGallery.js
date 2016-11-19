@@ -26,20 +26,20 @@ const links = {
   width: '100%',
 };
 
-const Lightbox = ({ url, id, max, handleClick }) => (
+const Lightbox = ({ url, id, max, getNextPhoto, getPrevPhoto, isNext, isPrev, handleClick }) => (
   <a href="#_" id={ id } className="lightbox">
-    { id > 1 
+    { isPrev
         ? (<div style={ Object.assign({}, navBtnStyle, {left: '0'}) }>
-            <a href={ `#${ id > 1 ? id - 1 : 1 }`} style={links} onClick={ () => handleClick(id - 1)}>
+            <a href={ `#${ getPrevPhoto(id) }`} style={links} onClick={ () => handleClick(getPrevPhoto(id))}>
               {'<'}
             </a>
           </div>)
         : null
     }
     <img src={ url } />
-    { id < max
+    { isNext
         ? (<div style={ Object.assign({}, navBtnStyle, {right: '0'}) }>
-            <a href={ `#${ id < max ? id + 1 : max }`} style={links} onClick={ () => handleClick(id + 1) }>
+            <a href={ `#${ getNextPhoto(id) }`} style={links} onClick={ () => handleClick(getNextPhoto(id)) }>
               {'>'}
             </a>
           </div>)
@@ -54,49 +54,87 @@ class PhotoGallery extends React.Component {
     this.state = {
       photos: props.photos
     };
+
+    // this.loadImages();
+  }
+
+  loadImages() {
+    const thumbs = this.loadImageType('http://manitobatoontario.wedding/assets/img/wedding-thumbs/');
+
+    Promise.all(thumbs).then( () => {
+      console.log('Loaded all thumbs');
+      const resized = this.loadImageType('http://manitobatoontario.wedding/assets/img/wedding-resized/');
+
+      Promise.all(resized).then( () => console.log('Loaded all resized') );
+    });
+  }
+
+  loadImageType(urlPrepend) {
+    const arr = [];
+    for (let i = 1; i <= this.state.photos; i++) {
+      const url = `${urlPrepend}m&g-${i}.JPG`;
+      arr.push(this.loadImage(url));
+    }
+    return arr;
+  }
+
+  loadImage(url) {
+    return new Promise( (resolve, reject) => {
+      const img = new Image();
+      img.onload = () => {
+        resolve();
+      };
+      img.src = url;
+      img.display = 'none';
+      document.body.appendChild(img);
+    });
+  }
+
+  getNextPhoto(id) {
+    const index = this.props.photoList.indexOf(id);
+    return this.props.photoList[index + 1];
+  }
+
+  getPrevPhoto(id) {
+    const index = this.props.photoList.indexOf(id);
+    return this.props.photoList[index - 1];
+  }
+
+  getMaxPhotos() {
+    return Math.min(this.props.photoList.length, this.state.photos);
   }
 
   render() {
     const photos = [];
     const lightboxes = [];
-    const links = [];
 
-    // console.log(this.state.viewing);
+    console.log(this.state.viewing);
 
-    // for (let i = 1; i <= this.state.photos; i++) {
-    //   const base = 'http://manitobatoontario.wedding/assets/img';
-    //   const resizedUrl = `${base}/wedding-resized/m&g-${i}.JPG`;
+    for (let i = 0; i < this.getMaxPhotos(); i++) {
+      const photoNum = this.props.photoList[i];
 
-    //   links.push({"rel": "prefetch", "href": resizedUrl});
-    // }
-
-    // links.forEach(link => {
-    //   const elem = document.createElement('link');
-    //   elem.rel = link.rel;
-    //   elem.href = link.href;
-
-    //   document.head.appendChild(elem);
-    // });
-
-    for (let i = 1; i <= this.state.photos; i++) {
       const base = 'http://manitobatoontario.wedding/assets/img';
-      const thumbUrl = `${base}/wedding-thumbs/m&g-${i}.JPG`;
-      const resizedUrl = `${base}/wedding-resized/m&g-${i}.JPG`;
+      const thumbUrl = `${base}/wedding-thumbs/m&g-${photoNum}.JPG`;
+      const resizedUrl = `${base}/wedding-resized/m&g-${photoNum}.JPG`;
 
       photos.push(
         <Photo
-          handleClick={ (id) => this.setState({ viewing: id }) }
-          key={i}
-          id={i}
+          handleClick={ (id) => this.setState({ viewing: id || this.state.viewing }) }
+          key={photoNum}
+          id={photoNum}
           url={thumbUrl}
         />
       );
       lightboxes.push(
         <Lightbox
-          key={i}
-          handleClick={ (id) => this.setState({ viewing: id }) }
-          url={ resizedUrl }
-          id={i}
+          key={photoNum}
+          getNextPhoto={ this.getNextPhoto.bind(this) }
+          getPrevPhoto={ this.getPrevPhoto.bind(this) }
+          isNext={ i + 1 < this.getMaxPhotos() }
+          isPrev={ i > 0 }
+          handleClick={ (id) => this.setState({ viewing: id || this.state.viewing }) }
+          url={ this.state.viewing === photoNum ? resizedUrl : null }
+          id={photoNum}
           max={this.state.photos}
         />
       );
@@ -110,8 +148,8 @@ class PhotoGallery extends React.Component {
             { lightboxes }
           </div>
         </div>
-        { this.state.photos < 450
-          ? (<a style={{ textAlign: 'center', paddingTop: '20px' }} onClick={ () => this.setState({ photos: this.state.photos + 12 }) }>
+        { this.state.photos < this.props.photoList.length
+          ? (<a style={{ textAlign: 'center', paddingTop: '20px' }} onClick={ () => this.setState({ photos: this.state.photos + this.props.photos }) }>
               Load more
             </a>)
           : null }
