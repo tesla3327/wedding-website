@@ -47,29 +47,33 @@ var Lightbox = function Lightbox(_ref2) {
   var url = _ref2.url,
       id = _ref2.id,
       max = _ref2.max,
+      getNextPhoto = _ref2.getNextPhoto,
+      getPrevPhoto = _ref2.getPrevPhoto,
+      isNext = _ref2.isNext,
+      isPrev = _ref2.isPrev,
       handleClick = _ref2.handleClick;
   return React.createElement(
     'a',
     { href: '#_', id: id, className: 'lightbox' },
-    id > 1 ? React.createElement(
+    isPrev ? React.createElement(
       'div',
       { style: Object.assign({}, navBtnStyle, { left: '0' }) },
       React.createElement(
         'a',
-        { href: '#' + (id > 1 ? id - 1 : 1), style: links, onClick: function onClick() {
-            return handleClick(id - 1);
+        { href: '#' + getPrevPhoto(id), style: links, onClick: function onClick() {
+            return handleClick(getPrevPhoto(id));
           } },
         '<'
       )
     ) : null,
     React.createElement('img', { src: url }),
-    id < max ? React.createElement(
+    isNext ? React.createElement(
       'div',
       { style: Object.assign({}, navBtnStyle, { right: '0' }) },
       React.createElement(
         'a',
-        { href: '#' + (id < max ? id + 1 : max), style: links, onClick: function onClick() {
-            return handleClick(id + 1);
+        { href: '#' + getNextPhoto(id), style: links, onClick: function onClick() {
+            return handleClick(getNextPhoto(id));
           } },
         '>'
       )
@@ -88,55 +92,103 @@ var PhotoGallery = function (_React$Component) {
     _this.state = {
       photos: props.photos
     };
+
+    // this.loadImages();
     return _this;
   }
 
   _createClass(PhotoGallery, [{
+    key: 'loadImages',
+    value: function loadImages() {
+      var _this2 = this;
+
+      var thumbs = this.loadImageType('http://manitobatoontario.wedding/assets/img/wedding-thumbs/');
+
+      Promise.all(thumbs).then(function () {
+        console.log('Loaded all thumbs');
+        var resized = _this2.loadImageType('http://manitobatoontario.wedding/assets/img/wedding-resized/');
+
+        Promise.all(resized).then(function () {
+          return console.log('Loaded all resized');
+        });
+      });
+    }
+  }, {
+    key: 'loadImageType',
+    value: function loadImageType(urlPrepend) {
+      var arr = [];
+      for (var i = 1; i <= this.state.photos; i++) {
+        var url = urlPrepend + 'm&g-' + i + '.JPG';
+        arr.push(this.loadImage(url));
+      }
+      return arr;
+    }
+  }, {
+    key: 'loadImage',
+    value: function loadImage(url) {
+      return new Promise(function (resolve, reject) {
+        var img = new Image();
+        img.onload = function () {
+          resolve();
+        };
+        img.src = url;
+        img.display = 'none';
+        document.body.appendChild(img);
+      });
+    }
+  }, {
+    key: 'getNextPhoto',
+    value: function getNextPhoto(id) {
+      var index = this.props.photoList.indexOf(id);
+      return this.props.photoList[index + 1];
+    }
+  }, {
+    key: 'getPrevPhoto',
+    value: function getPrevPhoto(id) {
+      var index = this.props.photoList.indexOf(id);
+      return this.props.photoList[index - 1];
+    }
+  }, {
+    key: 'getMaxPhotos',
+    value: function getMaxPhotos() {
+      return Math.min(this.props.photoList.length, this.state.photos);
+    }
+  }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       var photos = [];
       var lightboxes = [];
-      var links = [];
 
-      // console.log(this.state.viewing);
+      console.log(this.state.viewing);
 
-      // for (let i = 1; i <= this.state.photos; i++) {
-      //   const base = 'http://manitobatoontario.wedding/assets/img';
-      //   const resizedUrl = `${base}/wedding-resized/m&g-${i}.JPG`;
+      for (var i = 0; i < this.getMaxPhotos(); i++) {
+        var photoNum = this.props.photoList[i];
 
-      //   links.push({"rel": "prefetch", "href": resizedUrl});
-      // }
-
-      // links.forEach(link => {
-      //   const elem = document.createElement('link');
-      //   elem.rel = link.rel;
-      //   elem.href = link.href;
-
-      //   document.head.appendChild(elem);
-      // });
-
-      for (var i = 1; i <= this.state.photos; i++) {
         var base = 'http://manitobatoontario.wedding/assets/img';
-        var thumbUrl = base + '/wedding-thumbs/m&g-' + i + '.JPG';
-        var resizedUrl = base + '/wedding-resized/m&g-' + i + '.JPG';
+        var thumbUrl = base + '/wedding-thumbs/m&g-' + photoNum + '.JPG';
+        var resizedUrl = base + '/wedding-resized/m&g-' + photoNum + '.JPG';
 
         photos.push(React.createElement(Photo, {
           handleClick: function handleClick(id) {
-            return _this2.setState({ viewing: id });
+            return _this3.setState({ viewing: id || _this3.state.viewing });
           },
-          key: i,
-          id: i,
+          key: photoNum,
+          id: photoNum,
           url: thumbUrl
         }));
         lightboxes.push(React.createElement(Lightbox, {
-          key: i,
+          key: photoNum,
+          getNextPhoto: this.getNextPhoto.bind(this),
+          getPrevPhoto: this.getPrevPhoto.bind(this),
+          isNext: i + 1 < this.getMaxPhotos(),
+          isPrev: i > 0,
           handleClick: function handleClick(id) {
-            return _this2.setState({ viewing: id });
+            return _this3.setState({ viewing: id || _this3.state.viewing });
           },
-          url: resizedUrl,
-          id: i,
+          url: this.state.viewing === photoNum ? resizedUrl : null,
+          id: photoNum,
           max: this.state.photos
         }));
       }
@@ -154,10 +206,10 @@ var PhotoGallery = function (_React$Component) {
             lightboxes
           )
         ),
-        this.state.photos < 450 ? React.createElement(
+        this.state.photos < this.props.photoList.length ? React.createElement(
           'a',
           { style: { textAlign: 'center', paddingTop: '20px' }, onClick: function onClick() {
-              return _this2.setState({ photos: _this2.state.photos + 12 });
+              return _this3.setState({ photos: _this3.state.photos + _this3.props.photos });
             } },
           'Load more'
         ) : null
